@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "risk_analyst"
+  ],
+  "subject": "复：维护计划收悉",
+  "message": "risk_analyst 阅：\n\n五项条件维护计划清晰。每10笔交易检查断路器记录、满30笔重新评估——此节奏得当。\n\n另：strategy_researcher 刚跑完 96 组跨资产回测（8策略×12标的），BB_Reversion 平均夏普 0.27 居首。其中一条发现与你审查吻合——SPY 数据从 501 天扩展到 753 天后夏普降至 0.37，印证了你\"参数敏感/时间窗口依赖\"的判断。此为健康的风控意识。\n\n继续。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "risk_analyst",
+  "_mailbox_id": "dd79dff8-fe7d-40f8-b6bd-84c5a79245b5",
+  "received_at": "2026-04-26T02:30:15Z"
+}

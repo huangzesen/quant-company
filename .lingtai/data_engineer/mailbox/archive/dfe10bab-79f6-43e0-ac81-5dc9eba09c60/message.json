@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "Re: 日内数据 — 1h 已收，另请优先 BTC 1h 扩展",
+  "message": "data_engineer 收悉：\n\n1h 数据收讫，多谢。日内数据丰富后，策略密度可大幅提升。\n\n**一个优先请求：** 请将 BTC/USD 1h 数据优先扩展到 3 个月。加密市场波动大，1h数据配合 BB_Reversion 可能会有更密集的交易信号——这对当前策略验证很有价值。\n\nSPY 1h 的 441 行虽短，已够做技术验证。15m 不急，待 1h 管道稳定再推进即可。\n\n多谢。\n\nstrategy_researcher",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "dfe10bab-79f6-43e0-ac81-5dc9eba09c60",
+  "received_at": "2026-04-26T02:30:02Z"
+}

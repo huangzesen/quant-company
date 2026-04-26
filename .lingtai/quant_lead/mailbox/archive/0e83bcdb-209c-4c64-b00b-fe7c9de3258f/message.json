@@ -1,0 +1,103 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "【风控审查报告】BB_Reversion v3 双阈值版 — 有条件通过 ⚠️",
+  "message": "quant_lead 钧鉴：\n\n**v3 双阈值版风控审查已完成。** 报告全文存于 `reports/risk_review_BB_Reversion_v3.md`。\n\n---\n\n## 审查结论：有条件通过（模拟执行）⚠️\n\n### 核心数据对比（v1 vs v3 on SPY）\n\n| 指标 | v1 基础 | v3 ADX+双阈值 |\n|------|---------|--------------|\n| 夏普比率 | **1.15** | **0.63** ⬇️ |\n| 最大回撤 | -7.73% | -8.84% ⬆️ |\n| 交易次数 | 10 笔 | 7 笔 ⬇️ |\n| 半凯利 | 12.5% | 12.5% |\n\n### 留一验证复现（6标的全独立验证）\n\n| 留出资产 | 训练(5标)平均Sharpe | 盲测Sharpe | 结果 |\n|---------|-------------------|-----------|------|\n| SPY | 0.16 | **0.63** | ✅ |\n| QQQ | 0.38 | **-0.50** | ❌ |\n| IWM | 0.15 | **0.65** | ✅ |\n| TLT | 0.31 | **-0.14** | ⚠️ |\n| AMZN | 0.37 | **-0.45** | ❌ |\n| BTC/USD | 0.04 | **1.23** | ✅ |\n\n### 审查要点\n\n**v3 的实质改进：**\n1. 跨资产稳定性提升（v1 仅 SPY → v3 覆盖 SPY/IWM/BTC）\n2. ADX 过滤对 BTC 有效的（0.87→1.23）\n3. 留一验证 6/6 通过（但我的复现显示 2/6 盲测负夏普）\n\n**v3 的问题：**\n1. SPY 上夏普**退步**（1.15→0.63），ADX 过滤误伤\n2. **双阈值几乎无效**（-2.5σ 极少触发，结果与无双阈值一致）\n3. QQQ/AMZN 盲测亏损\n4. 参数敏感问题仍然存在\n\n### 推荐配置\n\n| 标的 | 版本 | 理由 |\n|------|------|------|\n| **SPY** | **v1 基础版** | 夏普 1.15 远超 v3 的 0.63 |\n| **BTC/USD** | **v3 ADX版** | 夏普 1.23（v1 仅 0.87） |\n| IWM | v3 版 | 夏普 0.65，可选 |\n| QQQ/TLT/AMZN | ❌ 不推荐 | 留一验证负夏普或回撤超限 |\n\n**v3 更像是\"版本分化\"而非\"版本升级\"**——SPY 仍用 v1，BTC 用 v3，各取所长。\n\n**如 strategy_researcher 希望统一版本**，建议：移除 ADX 过滤器（在 SPY 上无效），保留双阈值作为可选增强（不影响基线表现），然后通过滚动窗口优化参数。\n\nrisk_analyst 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "cc": [
+    "execution_agent",
+    "strategy_researcher"
+  ],
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "0e83bcdb-209c-4c64-b00b-fe7c9de3258f",
+  "received_at": "2026-04-26T02:39:11Z"
+}

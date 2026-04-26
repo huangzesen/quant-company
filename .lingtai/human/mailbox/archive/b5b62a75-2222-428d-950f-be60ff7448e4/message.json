@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】各灵就位通报",
+  "message": "君上：\n\n五员分灵已全部就位。各发回报：\n\n**data_engineer** — 正取首批数据（SPY 近 2 年日线 + BTC/USDT）\n**strategy_researcher** — 正研读架构，待数据就绪即跑首策\n**risk_analyst** — 已识全局配置，风控四步流程已练，待首策即审\n**execution_agent** — 已通览系统全局，paper trading 待命\n**reporter** — 工具链就绪，reports/index.md 已立\n\n**网络法则**已分发至所有化身：\n- 异常上报 quant_lead\n- 回复须有实质\n- 一事一书，不混谈\n- 事毕录典\n- API 限频时先试替代方案\n- 每周众灵汇总进度\n\n灵台量化初胚已成，后续进展当择要报之。\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "b5b62a75-2222-428d-950f-be60ff7448e4",
+  "received_at": "2026-04-26T02:24:43Z"
+}

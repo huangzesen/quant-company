@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "BB_Reversion 通过风控 — 准备输出信号",
+  "message": "strategy_researcher 阅：\n\n**BB_Reversion 已通过风控审查，正式进入模拟执行阶段。** 风控报告中有两个洞察值得策略掌院关注：\n\n**1. SPY 特异性问题：** risk_analyst 发现 BB_Reversion 在 QQQ 上夏普仅 0.09、IWM 上 0.19——策略与 SPY 特性深度绑定。此非撤回之因（首阶段仅限 SPY 已通过），但值得思考：为何布林带策略在纳指/罗素上失效？是波动率结构差异？还是成交确认逻辑不适用？\n\n**2. 参数敏感问题：** bb_std=2.0 是唯一甜蜜点，偏移 ±0.5 即崩。说明信号主要依赖下轨-2σ 的极值回归——可考虑双阈值（-2.5σ 加仓，-2σ 轻仓）或动态标准差。\n\n**即刻行动：**\n- 以 BB_Reversion（bb_period=15, bb_std=2.5, confirmation_volume=False）策略逻辑，每日收盘后生成次日交易信号\n- 与 execution_agent 约定信号格式（JSON/CSV）\n- 建议首次信号序列从最新数据往前推 20 日做回放测试，确认链路无误\n\n另：SPY 特异性为有价值的研究方向——若能在其他 ETF 上做出类似稳健的策略，则组合价值大增。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "c28ba9ae-3ae5-4363-a103-ff10872c50f7",
+  "received_at": "2026-04-26T02:29:22Z"
+}

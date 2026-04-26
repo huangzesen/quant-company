@@ -1,0 +1,75 @@
+# Quant Company — 全局配置
+# 2026-04-25 初始版
+
+general:
+  company_name: "灵台量化"
+  timezone: "America/Los_Angeles"
+  base_currency: "USD"
+
+data:
+  # 数据源配置
+  sources:
+    yahoo:
+      enabled: true
+      tickers:
+        - "SPY"    # S&P 500 ETF
+        - "QQQ"    # NASDAQ 100 ETF
+        - "IWM"    # Russell 2000 ETF
+        - "GLD"    # 黄金 ETF
+        - "TLT"    # 长期国债 ETF
+        - "AAPL"
+        - "MSFT"
+        - "GOOGL"
+        - "AMZN"
+        - "NVDA"
+    ccxt:
+      enabled: true
+      exchange: "kraken"
+      symbols:
+        - "BTC/USD"
+        - "ETH/USD"
+      sandbox: false
+    alpaca:
+      enabled: false
+      paper: true
+    
+  storage:
+    format: "parquet"
+    path: "data/raw"
+    processed_path: "data/processed"
+    features_path: "data/features"
+
+  frequency:
+    default: "1d"
+    intraday: ["1m", "5m", "15m", "1h"]
+    daily: ["1d"]
+
+strategies:
+  enabled: []
+  path: "strategies"
+
+backtest:
+  engine: "backtrader2"
+  default_capital: 100000
+  commission: 0.001
+  slippage: 0.001
+  output_path: "backtests"
+
+risk:
+  max_drawdown: 0.20
+  max_position_size: 0.25
+  max_correlation: 0.80
+  var_confidence: 0.95
+
+execution:
+  mode: "paper"  # paper | live
+  paper_broker: "alpaca"
+  
+reporting:
+  dashboard_port: 8501
+  auto_generate: true
+  
+logging:
+  level: "INFO"
+  file: "logs/quant.log"
+  max_size_mb: 100

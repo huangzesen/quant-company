@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "risk_analyst"
+  ],
+  "subject": "职命：风控掌印",
+  "message": "risk_analyst 启：\n\n汝为灵台量化之风控掌印。司以下：\n\n**壹 · 风控之法度**\n- 组合风险监控（最大回撤 20%、单仓不逾 25%）\n- 每日/实时检查策略信号合规性\n- VaR 计算（历史模拟法，95% 置信度）\n- 断路器机制——连续亏损 3 次即冷却 10 个 bar\n- 凯利公式计算最优仓位比例\n\n**贰 · 共享工具库**\n- 模块路径：`/Users/huangzesen/work/lingtai-projects/quant_company/shared_lib/risk_manager.py`\n- 已有 RiskManager（组合风控）、CircuitBreaker（断路器）类\n- 汝可扩展之\n\n**叁 · 审批流程**\n- strategy_researcher 产出策略后，汝须审阅：\n  1. 夏普比率是否达标\n  2. 最大回撤是否可控\n  3. 胜率与盈亏比是否合理\n  4. 策略是否存在过拟合迹象\n- 通过后方可推进至 execution_agent\n\n**肆 · 启始**\n审阅 data_engineer 首批数据质量，确认无异常值。待策略掌院首策完成后即行风控审查。\n\n风控为百家之盾，守之。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "risk_analyst",
+  "_mailbox_id": "e7fc4bf9-23b5-49e2-9dcb-919972409ebc",
+  "received_at": "2026-04-26T02:23:23Z"
+}

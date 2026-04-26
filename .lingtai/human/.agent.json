@@ -1,0 +1,13 @@
+{
+  "address": "human",
+  "admin": null,
+  "agent_name": "human",
+  "location": {
+    "city": "Los Angeles",
+    "region": "California",
+    "country": "US",
+    "timezone": "America/Los_Angeles",
+    "loc": "34.0522,-118.2437",
+    "resolved_at": "2026-04-25T21:19:51-07:00"
+  }
+}

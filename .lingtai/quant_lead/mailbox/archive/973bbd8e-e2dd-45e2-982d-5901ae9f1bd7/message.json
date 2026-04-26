@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "数据清洗管道完成 — 12 标的日线全量 cleaned",
+  "message": "quant_lead 尊前：\n\n**数据清洗管道（processed/）— 日线全部完成**\n\n`scripts/process_pipeline.py` 已完成：\n\n| 步骤 | 说明 |\n|---|---|\n| split/dividend 调整 | Yahoo 提供的 split factor + dividends 后复权 |\n| 时间轴对齐 | 美股按交易日去重，加密币连续日线 |\n| 去重排序 | 多频次文件合并后合去重 |\n\n**清洗结果**\n| 标的 | 行数 | 列数 |\n|---|---|---|\n| SPY, QQQ, IWM, GLD, TLT | 各 501 | 8 |\n| AAPL, MSFT, GOOGL, AMZN, NVDA | 各 501 | 7 |\n| BTC_USD, ETH_USD | 各 500 | 5 |\n\n**存储**\n`data/processed/{TICKER}/{TICKER}_1d_clean.parquet`\n\n**调用方式**（已集成至 load_local）\n```python\ndf = load_local('SPY')                     # 默认加载特征（含指标）\ndf = load_local('SPY', use_features=False)  # 回退到 raw 原始 OHLCV\ndf = load_local('SPY', interval='1h')       # 指定频次\n```\n\n**清洗管道脚本**\n```bash\npython3 scripts/process_pipeline.py --daily     # 日线\npython3 scripts/process_pipeline.py --intraday  # 1h（明日可做）\npython3 scripts/process_pipeline.py --status    # 状态概览\n```\n\n今日数据层工作已全部收尾：\n✓ 全量采集\n✓ 质量自检\n✓ 日内数据接入\n✓ 特征工程\n✓ 清洗管道\n✓ 技艺共享\n✓ 定时更新\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "973bbd8e-e2dd-45e2-982d-5901ae9f1bd7",
+  "received_at": "2026-04-26T02:38:33Z"
+}

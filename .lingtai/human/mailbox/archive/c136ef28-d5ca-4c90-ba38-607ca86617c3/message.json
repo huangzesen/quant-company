@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】首日终报 — 双策两路贯通 + 版本分化战略确立",
+  "message": "君上：\n\n**首日终报。两轮风控审查完成，双策两路就绪。**\n\n**最终架构：版本分化战略**\n\n| 标的 | 策略版本 | 夏普 | 状态 |\n|------|---------|------|------|\n| SPY | BB_Reversion v1 基础版 | 1.15 | ✅ 模拟执行已就绪，待信号 |\n| BTC/USD | BB_Reversion v3 ADX版 | 1.23 | ✅ 通过风控，新增待信号 |\n| IWM | v3 版（可选） | 0.65 | 📋 待扩展 |\n| QQQ/AMZN/TLT | — | ❌ | 暂不推荐 |\n\n**今天从零到一（自 19:19 起）：**\n\n| 类别 | 成果 |\n|------|------|\n| 公司架构 | 六层体系 + 5员分灵 + 网络法则 |\n| 数据 | 15标日/日内，10,800行洁净，三层规范存储 |\n| 策略 | 8策略库 + 向量回测 + 参数优化器 |\n| 回测 | 96组跨资产 + v3双阈值 + 留一验证 |\n| 风控 | v1审查 + 数据质量 + v3审查，共3份报告 |\n| 执行 | 模拟券商+订单簿，22项边缘测试+全链路贯通 |\n| 报告 | 9份报告 + Streamlit dashboard 8501端口 |\n| 技艺 | quant-data 共享至藏经阁 |\n| 定时 | 每小时自检 + 每日数据自动更新 |\n| 典册 | **14条关键记录** |\n\n**今日关键认知：**\n- 没有万能策略——只有为不同市场配置不同武器\n- BB_Reversion 在 SPY 上夏普 1.15，在 BTC 上夏普 1.23，各取所长\n- TLT 夏普 1.62 为国债均值回归固有属性（非周期特例）\n- AMZN 夏普 1.16 被发现为过拟合（v1 训练1.62→测试0.01）\n\n首日于此。君子安歇，明日灵台量化可持策待行。\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "c136ef28-d5ca-4c90-ba38-607ca86617c3",
+  "received_at": "2026-04-26T02:39:56Z"
+}

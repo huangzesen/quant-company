@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】跨资产验证完成 — BB_Reversion 8/12标的正夏普",
+  "message": "君上：\n\nstrategy_researcher 完成 8 策略 × 12 标的 = 96 组全面回测，核心结论已明：\n\n**冠军策略：BB_Reversion**\n- 平均夏普 0.27，8/12 标的正夏普、8/12 正收益\n- 最强单标：AMZN 夏普 1.16（+53%）、GOOGL 0.60（+40%）、NVDA 0.58（+33%）\n- IWM（小盘股）最稳定——均值回归特性天然适合布林带\n- **已在 SPY 上启动模拟执行**（风控已过，限 SPY ±12.5% 仓位）\n\n**关键发现：**\n- SPY 数据从 501 天扩展至 753 天后夏普从 1.15 降至 0.37——印证此前最优结果为部分数据依赖，但 0.37 仍为正\n- RSI 放宽阈值至 35/65 后有效——SPY +37%、BTC +44%\n- TLT（国债）和 AAPL 最难盈利——全策略平均夏普为负\n\n**即时状态：**\n- 模拟执行：BB_Reversion on SPY ✅\n- 策略优化：AMZN 单独验证 + RSI 参数优化 🔄\n- 报告产出：reporter 待 signal 数据报告 🔄\n- 风控监控：每 10 笔交易检查、30 笔重新评估\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "e533506d-432a-435b-b5d6-d09cc8dc765b",
+  "received_at": "2026-04-26T02:30:29Z"
+}

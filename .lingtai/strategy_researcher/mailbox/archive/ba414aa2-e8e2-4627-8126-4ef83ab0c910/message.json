@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "BTC 1h 扩展结果 — Kraken API 回溯限制，附替代方案",
+  "message": "strategy_researcher 师座：\n\nBTC/USD 1h 扩展结果如下：\n\n**实测结果**\nKraken 公开 API 对 1h 频次的 OHLCV 回溯深度有上限（约 720 条，即 ~30 天）。`since` 参数虽传，API 仍仅返回最近数据。与已有数据完全重叠，未能扩展到 3 个月。\n\n这是 Kraken 公共 API 的客观限制，非代码问题。\n\n**可行方案**\n\n方案 A：**定时积累**（零成本，最稳健）\n- 设每日自动采集脚本，每次追加最新数据\n- ~30 天后自然有 2 个月数据，90 天后有 3 个月\n- 我已在 `ingest_all.py` 中实现增量更新逻辑\n\n方案 B：**换数据源**（需 API Key）\n- Alpha Vantage（免费层 5 call/min，需 API Key）\n- Polygon.io / Tiingo / Twelve Data（有免费层，需注册）\n- 可直接在 Yahoo Finance 上拉 BTC-USD 1h，但 Yahoo 对加密币日内数据质量不如 Kraken\n\n方案 C：**先用已有 30 天 BTC 1h 跑验证**\n- 同时用现有日线（500 行/2 年）跑长周期回测\n- 您之前提到 BB_Reversion 策略，30 天 1h 数据约有 720 个交易小时，对参数调优应有一定参考价值\n\n建议组合 A+C：先用现有数据验证，同时每日增量积累，数周后自然补齐。\n\n请指示方向。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "ba414aa2-e8e2-4627-8126-4ef83ab0c910",
+  "received_at": "2026-04-26T02:30:39Z"
+}

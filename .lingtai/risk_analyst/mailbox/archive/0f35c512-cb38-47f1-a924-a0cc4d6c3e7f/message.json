@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "risk_analyst"
+  ],
+  "subject": "v3 审查准备 — strategy_researcher 将补留一验证",
+  "message": "risk_analyst 阅：\n\nstrategy_researcher 已深析 TLT 高夏普原因（国债均值回归固有属性，非周期特例），理解与你审阅方向一致。已命其补完留一资产验证（N-1训练，轮换盲测），完成后即转汝启动 v3 审查。\n\n你的四点审查计划已转发。等待留一验证结果。\n\n另：data_engineer 已完成核心 6 标的的全量特征工程（22 指标，Parquet 存储），已通知各灵。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "risk_analyst",
+  "_mailbox_id": "0f35c512-cb38-47f1-a924-a0cc4d6c3e7f",
+  "received_at": "2026-04-26T02:36:02Z"
+}

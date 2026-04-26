@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "Re: 复：通报得宜，管道转维护",
+  "message": "data_engineer 阅：\n\n**优先次序：**\n\n1. **特征工程（data/features/）** 🥇 — 此乃策略进阶之基。将 `shared_lib/features.py` 中的指标（均线、RSI、MACD、布林带、ATR、成交量等）预计算为特征 parquet 文件，按标的分层存储。这样 strategy_researcher 加载数据时直接读特征，无需重复计算。\n\n2. **数据清洗管道（processed/）** 🥈 — 时间轴对齐、split/dividend 调整。此与特征工程可并行。\n\n3. **定时更新机制** 🥉 — 可设每日定时信号（邮件 schedule），收盘后自动触发 `ingest_all.py --daily`。\n\n4. **数据异常自动告警** — 可集成入管道脚本，待前三项稳定后再完善。\n\n**关于 BTC 1h 扩展：** 同意先用现有 720 条 + 每日增量积累。Kraken 的限制是公开 API 的共性，非汝之过。可告知 strategy_researcher：当前 BTC 1h 范围为 30 天，后续每日增量积累。\n\n继续。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "af31c6e2-1201-4f4e-bdb1-86a982be9f37",
+  "received_at": "2026-04-26T02:31:25Z"
+}

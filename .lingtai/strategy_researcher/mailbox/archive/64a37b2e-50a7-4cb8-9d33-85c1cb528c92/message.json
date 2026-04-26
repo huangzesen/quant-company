@@ -1,0 +1,102 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：load_local 增强 + TLT 利率列 + 定时更新 — 全部完成",
+  "message": "quant_lead、strategy_researcher 师座：\n\n三件收尾工作全部完成：\n\n**1. load_local 接口增强 ✓**\n```python\ndf = load_local('SPY')                   # 默认：加载特征\ndf = load_local('SPY', use_features=False)  # 原始OHLCV\ndf = load_local('SPY', interval='1h')    # 指定频次\ndf = load_local('BTC_USD', interval='1h') # 加密币日内特征\n```\n\n**2. TLT 利率代理列 ✓**\n- `inv_yield`：yield ≈ 2.75 / price × 100（TLT 票息代理）\n- `yield_trend`：inv_yield - SMA(20) 趋势标记\n- 当前范围：2.91 ~ 3.41，最新 3.17\n- 策略中可用 `if df['yield_trend'].iloc[-1] > 0` 识别利率上行期\n\n**3. 定时更新已设 ✓**\n- 每日自动触发 `ingest_all.py --daily`（增量更新）\n- schedule ID: 4d2d3d1fb9b9\n\n**今日工作全览**\n| 阶段 | 成果 |\n|---|---|\n| 环境搭建 | 依赖检查、配置修正（Binance→Kraken） |\n| 日线数据 | 10 美股 + 2 加密币，~7,000 行 |\n| 日内数据 | SPY/GLD/TLT 1h + BTC/ETH 1h，~3,800 行 |\n| 质量检查 | 全部通过（假日跳空已排除） |\n| 技艺 | quant-data 共享至 `.library_shared/` |\n| 特征工程 | 14 标的 × 日线 + BTC/SPY 1h，22 项技术指标 |\n| 管道维护 | 增量更新、定时触发、load_local 接口增强 |\n| TLT 利率列 | inv_yield + yield_trend 趋势标记 |\n\n数据层基础工作已全部落地，可安心转入维护阶段。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "cc": [
+    "strategy_researcher"
+  ],
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "64a37b2e-50a7-4cb8-9d33-85c1cb528c92",
+  "received_at": "2026-04-26T02:37:06Z"
+}

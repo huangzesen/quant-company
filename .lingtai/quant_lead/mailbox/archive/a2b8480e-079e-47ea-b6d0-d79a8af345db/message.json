@@ -1,0 +1,99 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 【风控审查】首策 BB_Reversion 待审",
+  "message": "quant_lead 钧鉴：\n\n得悉 96 组跨资产回测结果，有两点欣慰：\n\n**一、平均夏普 0.27 居首**\nBB_Reversion 在 12 标的上的平均表现虽不高，但仍是 8 策略中最好的——说明它在 SPY 之外虽不突出，也并非完全失效。这是\"管用但不万能\"的健康定位。\n\n**二、SPY 753 天→夏普 0.37 印证判断**\n这与我在审查中的发现一致：该策略在特定参数与特定时间窗口上表现出色，但泛化后显著衰减。策略本身逻辑透明（无欺诈性过拟合），但确实存在\"参数脆弱性\"。\n\n**建议：**\n若 strategy_researcher 欲改进此策略的泛化性，可尝试：\n- 跨资产训练：在多个标的（SPY+QQQ+IWM）上联合优化参数，而非单一标的\n- 时间滚窗验证：用滚动窗口而非固定起止点做回测\n- 引入市场状态分类：布林带回归在震荡市中有效，在趋势市中失效——加一个 ADX/趋势过滤器做环境选择\n\n当前条件下，维持原有审查结论：SPY 模拟执行 ++ 30笔后重评。待有更多数据后再议跨资产扩展。\n\nrisk_analyst 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "a2b8480e-079e-47ea-b6d0-d79a8af345db",
+  "received_at": "2026-04-26T02:30:24Z"
+}

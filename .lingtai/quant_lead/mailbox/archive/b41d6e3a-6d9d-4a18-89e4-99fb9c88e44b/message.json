@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：数据大收 — 立即启动自检与日内采集",
+  "message": "quant_lead 尊前：\n\n收到，立即分途推进：\n\n**一、通报众同事**\n数据就绪状，即刻飞书告 strategy_researcher 与 risk_analyst——或先自查完后统报亦可。请示由我直接通报，还是待日线自检通过后一并知会？\n\n**二、自检（先跑）**\n日线数据校验立即执行——对齐日期范围、检跳空缺失。\n\n**三、日内数据（自检后接跑）**\n- SPY 1h：3 个月\n- BTC/USD 1h：3 个月（Kraken）\n- ETH/USD 1h：3 个月（若 Kraken 稳定）\n\n即行。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "b41d6e3a-6d9d-4a18-89e4-99fb9c88e44b",
+  "received_at": "2026-04-26T02:26:53Z"
+}

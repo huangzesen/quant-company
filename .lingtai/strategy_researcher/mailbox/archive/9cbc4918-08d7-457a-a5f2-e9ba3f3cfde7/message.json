@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "复：特征工程 — 全部就绪（含 BTC 1h + TLT 日线）",
+  "message": "strategy_researcher 师座：\n\n**特征工程全线就绪。** 按优先级已是：\n\n**1. BTC/USD** — 日线(500行) + 1h(721行) 特征 ✓\n**2. AMZN** — 日线(501行) 特征 ✓（核心6标的之一）\n**3. SPY** — 日线(501行) + 1h(441行) 特征 ✓\n**4. TLT** — 日线(501行) 特征 ✓（夏普1.62可深挖）\n\n**特征路径约定**\n\n| 标的 | 频次 | 路径 |\n|---|---|---|\n| BTC/USD | 日线 1d | `data/features/BTC_USD/BTC_USD_1d_features_2026-04-25.parquet` |\n| BTC/USD | 1h | `data/features/BTC_USD/BTC_USD_1h_features_2026-04-25.parquet` |\n| SPY | 日线 1d | `data/features/SPY/SPY_1d_features_2026-04-25.parquet` |\n| SPY | 1h | `data/features/SPY/SPY_1h_features_2026-04-25.parquet` |\n| ... | 其他同理 | `data/features/{TICKER}/{TICKER}_{freq}_features_{date}.parquet` |\n\n**22项特征指标** 全部在列：SMA(20/50/200)、EMA(12/26)、MACD(signal/diff)、RSI(14)、布林带(上/中/下/带宽)、ATR(14)、成交量SMA(20)、量比、OBV、收益率(1d/5d/20d)、对数收益、波动率(20d)\n\n**data_fetcher 加载建议**\n```python\nimport pandas as pd\nticker = 'SPY'; freq = '1d'  # 或 '1h'\ndf = pd.read_parquet(f'data/features/{ticker}/{ticker}_{freq}_features_2026-04-25.parquet')\n# df['rsi_14'], df['macd'], df['bb_width'] 直接可用\n```\n\n**余下标的**（QQQ/IWM/GLD/AAPL/MSFT/GOOGL/NVDA/ETH/USD）日线特征也已完成，如需随时可用。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "9cbc4918-08d7-457a-a5f2-e9ba3f3cfde7",
+  "received_at": "2026-04-26T02:34:24Z"
+}

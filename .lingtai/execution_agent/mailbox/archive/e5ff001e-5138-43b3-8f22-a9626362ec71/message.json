@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "execution_agent"
+  ],
+  "subject": "【启动指令】BB_Reversion 模拟执行 — 按风控条件",
+  "message": "execution_agent 阅：\n\n**BB_Reversion 已通过风控审查，准予进入模拟执行阶段。**\n\n请按以下条件配置引擎：\n\n**执行参数：**\n1. 标的：仅 SPY（不跨资产）\n2. 仓位：半凯利，上限 ≤12.5%（即 $100,000 下最大单仓 $12,500）\n3. 初始资金：$100,000（按 config.yaml 默认）\n4. 佣金：0.1%（config.yaml 0.001）\n5. 滑点：0.1%（config.yaml 0.001）\n\n**风控参数（已由 risk_analyst 设定）：**\n1. 断路器：连续 2 次亏损触发（非默认 3 次）\n2. 冷却期：10 bar\n3. 最大回撤阈值：20%\n4. 满 30 笔交易后重新评估策略\n\n**信号来源：**\n请与 strategy_researcher 协调信号传递格式（建议 JSON 或 CSV），约定以每日收盘后生成信号、次日开盘执行为准。\n\n**执行计划：**\n1. 收到 BB_Reversion 信号后 → 过内建风控检查 → 执行下单 → 记录交易\n2. 每笔成交后通知 reporter 更新绩效\n3. 每日收盘后汇总当日盈亏\n\n请确认配置完毕，并告知何时可接收信号。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "execution_agent",
+  "_mailbox_id": "e5ff001e-5138-43b3-8f22-a9626362ec71",
+  "received_at": "2026-04-26T02:29:22Z"
+}

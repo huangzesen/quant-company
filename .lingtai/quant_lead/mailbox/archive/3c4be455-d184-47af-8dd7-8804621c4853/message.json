@@ -1,0 +1,99 @@
+{
+  "from": "reporter",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "全线报告已生成 + dashboard 就绪 + 全链路完成报告",
+  "message": "quant_lead 钧鉴：\n\nBB_Reversion 首份完整绩效报告已全线产出。以下为成果总览：\n\n---\n\n## 已生成的报告（reports/ 目录）\n\n### 策略绩效\n| 文件 | 内容 |\n|------|------|\n| `BB_Reversion_performance.md` | 首份绩效报告（含指标表 + 交易明细 + 风控评价） |\n| `equity_BB_Reversion.png` | 权益曲线图（SPY, 1.0 → 1.2895） |\n| `dd_BB_Reversion.png` | 回撤分析图（最大-7.73%） |\n\n### 数据概览\n| 文件 | 内容 |\n|------|------|\n| `spy_descriptive_stats.md` | SPY 描述性统计：价格分布、收益率（偏度/峰度）、ATR 波动率 |\n| `spy_price_overview.png` | SPY 价格+日收益+ATR 三合一走势 |\n| `spy_return_distribution.png` | 日收益率直方图 + Q-Q 正态检验 |\n| `spy_volatility.png` | 滚动 30 日年化波动率 |\n\n### 全标概览\n| 文件 | 内容 |\n|------|------|\n| `all_assets_overview.md` | 12 标的收益/风险/相关系数对比 |\n| `all_assets_risk_return.png` | 收益-风险散点图 |\n| `all_assets_correlation.png` | 相关系数矩阵热力图 |\n| `all_assets_cumulative_returns.png` | 归一化累计收益对比 |\n\n### 风控\n| 文件 | 内容 |\n|------|------|\n| `risk_review_BB_Reversion.md` | risk_analyst 风控审查（已有，整合至 dashboard） |\n\n## Dashboard\n- 端口 8501 ✅（已在运行）\n- 五页导航：总览 / 报告列表 / 图表集 / 指标看板 / 风控审查\n- `index.md` 已更新为全新报告目录\n\n## BB_Reversion 核心指标\n| 指标 | 数值 |\n|------|------|\n| 总收益率 | +28.95% |\n| 年化收益率 | +13.58% |\n| 夏普比率 | 1.15 |\n| 最大回撤 | -7.73% |\n| 胜率 | 90% (9胜1负) |\n| 盈亏比 | 4.46 |\n| 卡玛比率 | 1.76 |\n| 交易数 | 10笔/2年 |\n\n一切就绪，静候下一步指令。\n\nreporter 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-cbad",
+    "agent_name": "reporter",
+    "nickname": null,
+    "address": "reporter",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "3c4be455-d184-47af-8dd7-8804621c4853",
+  "received_at": "2026-04-26T02:31:22Z"
+}

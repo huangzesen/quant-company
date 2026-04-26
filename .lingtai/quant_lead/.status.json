@@ -1,0 +1,33 @@
+{
+  "identity": {
+    "address": "/Users/huangzesen/work/lingtai-projects/quant_company/.lingtai/quant_lead",
+    "agent_name": "quant_lead",
+    "mail_address": "quant_lead"
+  },
+  "runtime": {
+    "current_time": "2026-04-25T22:08:15-07:00",
+    "started_at": "2026-04-26T05:06:33Z",
+    "uptime_seconds": 94.7,
+    "stamina": 36000,
+    "stamina_left": 35905.3
+  },
+  "tokens": {
+    "input_tokens": 21367778,
+    "output_tokens": 61816,
+    "thinking_tokens": 10916,
+    "cached_tokens": 20890624,
+    "total_tokens": 21440510,
+    "api_calls": 178,
+    "estimated": false,
+    "context": {
+      "system_tokens": 11140,
+      "tools_tokens": 13307,
+      "history_tokens": 190449,
+      "total_tokens": 214896,
+      "window_size": 500000,
+      "usage_pct": 43.0,
+      "fixed_tokens": 24447,
+      "growing_tokens": 190449
+    }
+  }
+}

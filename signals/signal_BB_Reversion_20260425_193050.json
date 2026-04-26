@@ -1,0 +1,9 @@
+{
+  "strategy": "BB_Reversion",
+  "version": "1.0",
+  "generated_at": "2026-04-26T02:30:50.036022+00:00",
+  "last_price": 713.98,
+  "last_date": "2026-04-24",
+  "current_position": 0,
+  "signals": []
+}

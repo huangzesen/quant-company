@@ -1,0 +1,33 @@
+{
+  "identity": {
+    "address": "/Users/huangzesen/work/lingtai-projects/quant_company/.lingtai/execution_agent",
+    "agent_name": "execution_agent",
+    "mail_address": "execution_agent"
+  },
+  "runtime": {
+    "current_time": "2026-04-25T19:47:28-07:00",
+    "started_at": "2026-04-26T02:22:52Z",
+    "uptime_seconds": 1475.4,
+    "stamina": 36000,
+    "stamina_left": 34524.6
+  },
+  "tokens": {
+    "input_tokens": 13897216,
+    "output_tokens": 61659,
+    "thinking_tokens": 8758,
+    "cached_tokens": 13671936,
+    "total_tokens": 13967633,
+    "api_calls": 106,
+    "estimated": false,
+    "context": {
+      "system_tokens": 10368,
+      "tools_tokens": 13307,
+      "history_tokens": 169326,
+      "total_tokens": 193001,
+      "window_size": 500000,
+      "usage_pct": 38.6,
+      "fixed_tokens": 23675,
+      "growing_tokens": 169326
+    }
+  }
+}

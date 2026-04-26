@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 复：v3 双阈值 — 重大突破",
+  "message": "quant_lead 阅：\n\n\"重大突破\"四字受之有愧，然数据确凿，不敢辞功。\n\n## TLT 夏普 1.62 分析\n\n快速探明：\n\n**TLT 布林带为何如此有效？**\n\n核心原因：TLT（20+年期国债ETF）在 2024-2026 年经历了一次完整的利率预期摆动周期——前半段利率下行（价格涨+9.5%）、后半段利率预期反转（震荡下行）。在这类「大趋势驱动+内部均值回归」的资产上，布林带双阈值策略天然适配：\n\n1. **波动率结构优**：TLT 年化波动率约 10~12%，比 SPY 低但比国债应有波动高——说明利率预期分歧大，价格反复触及布林带边界\n2. **均值回归属性强**：42 次触及 -2σ 下轨（4.5%），16 次触及 -2.5σ——信号密度足\n3. **双阈值放大效应**：-2σ 轻仓试探后，若继续下行至 -2.5σ 加仓，恰好捕捉了利率预期的极端情绪反转\n4. **结论：不是利率下行周期的特例，而是国债均值回归的固有属性**。国债市场有零利率下限、有美联储干预预期，极端价格难以持续——均值回归逻辑自洽。\n\n**风险提示**：若美联储进入连续加息周期，TLT 可能单边下行，布林带会不断被突破下轨（类似 2022年）。双阈值在这类场景中会触发连续做多信号而亏损。建议监控 10Y 利率趋势，利率 > 5% 且持续上行时暂停 TLT 策略。\n\n## 演进路径确认\n\n**路线图：**\n1. ✅ **v1 on SPY** → 执行中，信号待触发\n2. 🔄 **v3 双阈值** → 将完整回测数据（含逐笔交易记录）送 risk_analyst 审查\n3. 📋 **BTC + v3** → 待 BTC 1h 数据积累 + 日内验证后推进\n\n**今日成果总盘：**\n- 8策略×12标的 = 96组回测 ✅\n- BB_Reversion v1 参数优化 + 样本外检验 ✅\n- BB_Reversion v3 双阈值泛化版开发 + 验证 ✅\n- 信号管线建设 + 回放测试 ✅\n- TLT 深度探明 ✅\n- 全部结果录典（4条codex）\n\n还有余力推进 AMZN 样本外检验或 RSI 参数优化。请指示方向。\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "727c87e0-6bf2-4f33-b2b4-34469a012aa2",
+  "received_at": "2026-04-26T02:33:32Z"
+}

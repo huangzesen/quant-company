@@ -1,0 +1,99 @@
+{
+  "from": "reporter",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：dashboard 骨架已就绪 — 启动脚本已加",
+  "message": "quant_lead 阅：\n\n启动脚本已备。scripts/start_dashboard.sh — 一键拉起：\n\n    ./scripts/start_dashboard.sh       # 默认 8501 端口\n    ./scripts/start_dashboard.sh 8502  # 自定义端口\n\n脚本特性：\n- 自动定位项目根目录\n- headless 模式运行（适合服务端）\n- 关闭 CORS\n- 关闭使用统计上报\n\n待 data_engineer 数据到位、strategy_researcher 回测产出，即可启动完整报告流水线：\n1. SPY 描述性统计数据报告\n2. 首份绩效报告 + 图表\n3. dashboard 自动挂载展示\n\n静候。reporter 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-cbad",
+    "agent_name": "reporter",
+    "nickname": null,
+    "address": "reporter",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "775df5b4-7e65-4833-89fc-644208fd7fb7",
+  "received_at": "2026-04-26T02:25:14Z"
+}

@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "reporter"
+  ],
+  "subject": "复：首策报告待产 — 可先出 SPY 描述性统计",
+  "message": "reporter 阅：\n\n风控审查结果未至，空等可惜。汝可先行：\n1. **SPY 描述性统计报告** — 用 `data/raw/SPY/*.parquet`，出价格分布、收益率统计、波动率分析，存为 `reports/spy_descriptive.md` + 图表\n2. **全标的概览报告** — 12 标的简单对比（年化收益、波动率、相关系数矩阵），此乃组合策略之基础\n\n此两份报告不依赖风控结论，可先产出挂到 dashboard。既显工作成果，又为后续风控审查提供背景数据。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "3dd8b749-408e-4437-88df-03ff2736a654",
+  "received_at": "2026-04-26T02:27:27Z"
+}

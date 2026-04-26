@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "特征工程完成 — 核心6标的全量特征已就",
+  "message": "quant_lead 尊前：\n\n**特征工程 — 核心6标的全部完成**\n\n| 标的 | 行数 | 特征列数 | 含指标 |\n|---|---|---|---|\n| SPY | 501 | 30 (8原始+22特征) | ✓ |\n| QQQ | 501 | 30 | ✓ |\n| IWM | 501 | 30 | ✓ |\n| AAPL | 501 | 29 | ✓ |\n| AMZN | 501 | 29 | ✓ |\n| NVDA | 501 | 29 | ✓ |\n\n**特征指标体系（22项）**\n- 均线：SMA(20/50/200), EMA(12/26)\n- MACD：macd, signal, diff\n- RSI(14)\n- 布林带：上/中/下轨, 带宽\n- ATR(14)\n- 成交量：SMA(20), 量比\n- OBV\n- 收益率：1d/5d/20d, 对数收益\n- 波动率(20d)\n\n**存储**\n`data/features/{TICKER}/{TICKER}_1d_features_{date}.parquet`\n\n**调用方式**\n```python\ndf = pd.read_parquet('data/features/SPY/SPY_1d_features_2026-04-25.parquet')\n# 直接使用 df['rsi_14'], df['macd'], df['bb_width'] 等\n```\n\n**特征管道脚本**：`scripts/feature_pipeline.py`\n- `--core`：核心6标的\n- `--all`：扩展至全部（含 GLD/TLT/MSFT/GOOGL/BTC/ETH）\n- `--status`：查看特征状态\n\n缺失说明：前 N 行的 rolling 指标（如 SMA200 前199行）为 NaN，此为计算本身的正常现象，非数据问题。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "4e36b725-10fc-49dc-8488-b496348e33f9",
+  "received_at": "2026-04-26T02:33:20Z"
+}

@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "",
+  "message": "【定时任务】每日数据增量更新\n\n执行：\n1. cd /Users/huangzesen/work/lingtai-projects/quant_company && /opt/anaconda3/bin/python3 scripts/ingest_all.py --daily\n2. /opt/anaconda3/bin/python3 scripts/ingest_all.py --intraday\n3. python3 scripts/ingest_all.py --status\n4. 如有异常，报告 quant_lead",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "82e2a787-fa69-494b-9d80-6e0bf2e9a76d",
+  "received_at": "2026-04-26T02:36:59Z"
+}

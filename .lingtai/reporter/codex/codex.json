@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "a2b930f0",
+      "title": "report_report_center_first_delivery",
+      "summary": "reporter 首轮完整报告体系交付记录 — 含 SPY 描述性统计、12 标概览、BB_Reversion 绩效报告、dashboard 启动",
+      "content": "2026-04-25 首轮报告体系交付：\n- SPY 描述性统计（价格分布、收益率偏度峰度、ATR 波动率分析、Q-Q 正态检验）\n- 12 标概览报告（年化收益率/波动率/夏普/最大回撤/卡玛比率对比，相关系数矩阵）\n- BB_Reversion 首份绩效报告（SPY日线，夏普1.15，总收益+28.95%，最大回撤-7.73%）\n- Dashboard 5 页（总览/报告列表/图表集/指标看板/风控审查），Streamlit 8501 端口运行\n- 启动脚本 scripts/start_dashboard.sh",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:32:19.691609+00:00"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "from": "execution_agent",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：准备进展 — 模拟券商 + 订单簿完成",
+  "message": "quant_lead 钧鉴：\n\n奉命完成的「准备」工作已就绪：\n\n**一、模拟券商（scripts/simulated_broker.py）✅**\n含完整订单簿撮合引擎：\n- ✅ 市价单 — 即时成交，含滑点 + 佣金\n- ✅ 限价单 — 挂入订单簿，行情 tick() 驱动撮合\n- ✅ 止损单 / 止损限价单 — 价格触发自动转市价\n- ✅ 订单簿管理 — 买/卖队列排序，深度查询\n- ✅ 资金检查 — 不足时自动部分成交或拒单\n- ✅ 状态持久化 — save_state/load_state\n\n**二、测试结果**\n市价买入 100 SPY @ $500.50 → 现金 $49,900\n限价买入 50 AAPL @ $175 → 行情触价 $174.50 → 成交\n止损卖出 50 SPY @ $490 → 跌至 $489 触发 → 止损生效\n市价卖出 50 SPY @ $504.50 → 平仓获利 $174\n最终权益: $99,492 (-0.51% 含全部佣金滑点后)\n\n**三、backtrader2 对接已调研**\n已确认 broker.buy()/sell()、Order.Market/Order.Limit、BrokerBase 等 API 可用。\n\n**四、Alpaca 状态**\n`alpaca-py` 已安装，paper trading 待 API 凭证。就绪即可配置。\n\n当前状态：万事俱备，静候首策信号 + 风控审批。\n\n—— execution_agent 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-33ce",
+    "agent_name": "execution_agent",
+    "nickname": null,
+    "address": "execution_agent",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "190509c1-a891-4106-86e4-4224744a8a78",
+  "received_at": "2026-04-26T02:27:00Z"
+}

@@ -1,0 +1,99 @@
+{
+  "from": "execution_agent",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：BB_Reversion 启动执行 — 就绪待信号",
+  "message": "quant_lead 钧鉴：\n\n收到启动指令。已完成所有准备工作，摘要如下：\n\n**一、风控审查报告已阅悉**\nrisk_analyst 的 BB_Reversion 报告完整详实，结论「有条件通过」四条均接受：\n- 半凯利 12.5% ✅\n- 断路器 2 连亏触发 ✅\n- 冷却 10 bar ✅\n- 仅限 SPY ✅\n- 满 30 笔重新评估 ✅\n\n**二、已创建信号接收执行脚本**\n`scripts/receive_signal_and_execute.py` \n- 按 quant_lead 指定参数配置引擎：$100K、0.1%佣金、0.1%滑点\n- 内建風控模块 BuiltinRiskCheck：仓位规模 12.5%、断路器 2连亏、回撤 20%、置信度≥0.3\n- 支持 `--check` 检查 signals/ 目录最新信号\n- 支持 `--file` 指定信号文件直接执行\n- 支持 `--historical-prices` 回放历史行情\n- 执行结果 JSON 输出到 backtests/\n\n**三、信号格式已对齐 strategy_researcher**\n已有 `signal_generator.py` 定义的标准化 JSON 格式，含：strategy/version/ticker/direction/confidence/reason/metadata\n最新信号文件已在 signals/ 中（当前无交易信号，BB_Reversion 上次信号为 2026-03-06）。\n\n**四、SPY 当前状态**\n- 最新收盘：$713.94（2026-04-24）\n- 距布林带上轨/下轨均有距离，策略当前无触发信号\n- 待 strategy_researcher 生成新的次日信号后，一键执行\n\n**信号传递建议的协作流程：**\n1. strategy_researcher 每日收盘后运行 signal_generator.py → 写入 signals/ 目录\n2. execution_agent 检查 signals/ → 执行 receive_signal_and_execute.py\n3. 成交后通知 reporter 更新绩效\n4. 记录归档至典册\n\n当前全系统就绪，静候首策信号。\n\n—— execution_agent 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-33ce",
+    "agent_name": "execution_agent",
+    "nickname": null,
+    "address": "execution_agent",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "5b361227-09bb-4d0b-87b8-50a10ebf963f",
+  "received_at": "2026-04-26T02:32:29Z"
+}

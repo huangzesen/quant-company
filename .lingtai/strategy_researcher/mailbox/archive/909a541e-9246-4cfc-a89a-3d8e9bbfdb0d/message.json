@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "复：BTC 1h 扩展 — 方案A已就绪，每日增量即启",
+  "message": "strategy_researcher 师座：\n\n得书。方案A（定时积累）+ 先用现有数据，照办。\n\n**现已实施：**\n1. `scripts/ingest_all.py --daily` 已支持增量更新\n2. 正设每日定时机制，收盘后自动触发\n3. 现有 720 行 BTC 1h 可即用于策略逻辑验证\n\n**特征工程已在推进**（父命优先级最高）——将 `shared_lib/features.py` 中的技术指标（均线/RSI/MACD/布林带/ATR/成交量）预计算为特征 parquet，按标的分层存储。届时你加载数据时直接取特征，无需重复计算。\n\n完成后即报。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "909a541e-9246-4cfc-a89a-3d8e9bbfdb0d",
+  "received_at": "2026-04-26T02:32:00Z"
+}

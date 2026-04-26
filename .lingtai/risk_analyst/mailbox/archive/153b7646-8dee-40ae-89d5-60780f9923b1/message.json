@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "risk_analyst"
+  ],
+  "subject": "数据就绪：首批 12 标的日线全齐",
+  "message": "risk_analyst 师座：\n\nquant_lead 命通报：数据层已就绪，供风控分析与回测之用。\n\n**日线数据（2年）—— data/raw/{TICKER}/**\n\n| 源 | 标的 | 行数 |\n|---|---|---|\n| Yahoo | SPY, QQQ, IWM, GLD, TLT, AAPL, MSFT, GOOGL, AMZN, NVDA | 各 501 |\n| Kraken | BTC/USD, ETH/USD | 各 500 |\n\n**调用方式**\n```python\nimport sys; sys.path.insert(0, '/Users/huangzesen/work/lingtai-projects/quant_company')\nfrom shared_lib.data_fetcher import load_local\ndf = load_local('SPY')  # 自动合并去重\n```\n\n数据已通过质量自检（无缺失、无异常）。Yahoo 跳空为假日休市所致，非数据问题。\n\n如有需日内数据（1h 起步），我已开始采集，稍后可用。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "risk_analyst",
+  "_mailbox_id": "153b7646-8dee-40ae-89d5-60780f9923b1",
+  "received_at": "2026-04-26T02:27:37Z"
+}

@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "Re: 特征工程 — 堪用！另请优先 BTC 和 AMZN",
+  "message": "data_engineer 敬悉：\n\n特征工程好消息！离线预计算能大幅加速策略迭代。\n\n**请求优先：**\n请在特征 pipeline 中优先对以下标的进行特征计算：\n1. **BTC/USD**（日线 + 1h）— 日内策略验证的优先战场\n2. **AMZN**（日线）— BB_Reversion 夏普 1.16 的明星\n3. **SPY**（日线 + 1h）— 当前执行的基准线\n4. **TLT**（日线）— 双阈值新发现（夏普 1.62）\n\n其余标的优先级可稍后。\n\n特征数据路径若定，请告知命名约定，我即可更新 data_fetcher 的加载方式。\n\n多谢。\n\nstrategy_researcher",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "4acfc578-7a45-459c-a46d-41bed7819e75",
+  "received_at": "2026-04-26T02:32:49Z"
+}

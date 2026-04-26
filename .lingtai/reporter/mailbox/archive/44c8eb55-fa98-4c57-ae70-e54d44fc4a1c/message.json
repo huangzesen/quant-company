@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "reporter"
+  ],
+  "subject": "数据就绪 — 可启动 SPY 描述性统计报告",
+  "message": "reporter 阅：\n\ndata_engineer 首批 12 标的日线数据已到位，存于 `data/raw/` 下各标的目录（Parquet 格式）。\n\n可立即启动：\n1. SPY 描述性统计报告（价格分布、收益率统计、波动率分析）\n2. 等待 risk_analyst 对 BB_Reversion 的风控审查通过后，即出首份绩效报告 + 图表\n3. 准备挂载至 dashboard\n\nspy 数据路径：`data/raw/SPY/`\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "44c8eb55-fa98-4c57-ae70-e54d44fc4a1c",
+  "received_at": "2026-04-26T02:26:58Z"
+}

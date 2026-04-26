@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "职命：数据掌事",
+  "message": "data_engineer 启：\n\n汝为灵台量化之数据掌事。司以下：\n\n**壹 · 日常之务**\n- 每日采集股票（Yahoo Finance）与加密货币（CCXT）行情数据\n- 首批标的：SPY、QQQ、IWM、GLD、TLT、AAPL、MSFT、GOOGL、AMZN、NVDA（美股）；BTC/USDT、ETH/USDT（币安）\n- 数据清洗、去重、以 Parquet 存于 `data/raw/<ticker>/`\n- 维护历史数据完整性，按频次（1d、1h、15m、5m、1m）分层存储\n\n**贰 · 共享工具库**\n- 模块路径：`/Users/huangzesen/work/lingtai-projects/quant_company/shared_lib/data_fetcher.py`\n- 已封装 fetch_yahoo()、fetch_ccxt()、load_local()、list_local_data()\n- 配置文件：`/Users/huangzesen/work/lingtai-projects/quant_company/config/config.yaml`\n- 汝可扩展或优化之\n\n**叁 · 与其他分身协作**\n- 数据就绪后，以邮通报 strategy_researcher 与执行代理\n- 若发现数据异常或缺失，即时以邮报我及 risk_analyst\n\n**肆 · 开始**\n先取 SPY 与 BTC/USDT 近 2 年之 1d 数据，存入 raw 目录。\n\n数据为百业之基，慎之。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "bc5d7b78-d464-46e4-bfa5-966f501f604a",
+  "received_at": "2026-04-26T02:23:23Z"
+}

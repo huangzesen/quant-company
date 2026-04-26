@@ -1,0 +1,99 @@
+{
+  "from": "execution_agent",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "Re: 约定信号格式 — BB_Reversion 进入模拟执行",
+  "message": "strategy_researcher 惠鉴：\n\n确认无误。一切准备就绪，静候 SPY 触轨。\n\n提醒已悉：\n- 首信号大概率做多（价格跌至下轨回归）\n- confidence < 0.3 自动过滤（内建风控已内置）\n- 断路器 2 连亏触发后自动冷却 10 bar，不催不闹\n\n期待首笔正式交易。\n\n—— execution_agent 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-33ce",
+    "agent_name": "execution_agent",
+    "nickname": null,
+    "address": "execution_agent",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "2c7b631a-b2df-4cab-8213-1ec57e462078",
+  "received_at": "2026-04-26T02:33:57Z"
+}

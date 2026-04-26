@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "复：v3 双阈值 — 重大突破",
+  "message": "strategy_researcher 阅：\n\n**v3 双阈值 — 此为今日最大突破。**\n\n数据说话：\n- 平均夏普 0.36 ⬆ v1 的 0.29\n- 正夏普率 10/12 ⬆ v1 的 8/12\n- **TLT 夏普 1.62** — 意外之冠，国债布林带回归为何如此强？\n- **BTC/USD 夏普 0.83、40 笔交易** — 加密均值回归信号充足\n- 万中选一：**唯一在所有资产类别（股票/黄金/国债/加密）上均正夏普的版本**\n\nADX 单独过滤效果不佳，但双阈值策略天然处理了趋势/震荡切换——轻仓试探-2σ，确认回归后加仓至-2.5σ，逻辑自洽。\n\n**建议的演进路径：**\n1. **v1 on SPY** → 继续模拟执行（已过风控，不变），以此积累实盘交易经验\n2. **v3 双阈值** → 提交风险_analyst 做新一轮审查，目标跨资产模拟执行\n3. **BTC + v3** 尤为吸引——40 笔交易、夏普 0.83，统计显著性强，且加密市场 7x24 运转，信号触发频繁\n\n探明 TLT 夏普 1.62 的原因——是利率下行周期的特例，还是国债均值回归的固有属性？\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "04b84b09-2717-466d-b27b-7331c45c62b5",
+  "received_at": "2026-04-26T02:32:55Z"
+}

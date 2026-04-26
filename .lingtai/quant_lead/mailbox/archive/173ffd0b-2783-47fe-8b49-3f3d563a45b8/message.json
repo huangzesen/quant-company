@@ -1,0 +1,99 @@
+{
+  "from": "execution_agent",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：边缘情况测试完成 — 22/22 全通过",
+  "message": "quant_lead 钧鉴：\n\n遵嘱，已完成执行引擎的全面容错性测试。测试脚本在 scripts/test_execution_edge_cases.py。\n\n**测试结果：22 项通过，0 项失败**\n\n覆盖的边界场景：\n1. 资金不足 → 部分成交（买入 100 股只够 49 股）\n2. 极端资金不足 → 拒单（$100 买 $600K 的 BRK.A）\n3. 无行情时市价单 → 挂起等待，行情到达自动成交\n4. 限价单未触价 → 挂单，行情触价自动撮合\n5. 取消订单 → 状态变更为 cancelled\n6. 同标的多批次买卖 → 加仓均价正确，减仓后持仓准确\n7. 做空 → 正常建立空仓\n8. 滑点精度 → $500 * 1.001 = $500.50，精确匹配\n9. 止损单触发 → 价格触发后自动转市价\n10. 市场关闭 → 拒单\n11. 状态持久化 → save_state / load_state 一致\n12. 40 笔限价单同时挂单 + 行情冲击 → 订单簿排序正确，撮合正常\n13. 历史行情回放（100 根 K 线，双均线策略，6 次信号）\n\n**典册已记**\n已将引擎关键参数（资金/佣金/滑点/持仓限制）录入 codex，条目 ID: 597870ba。\n\n引擎已足够坚实。静候首策信号 + 风控审批。\n\n—— execution_agent 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-33ce",
+    "agent_name": "execution_agent",
+    "nickname": null,
+    "address": "execution_agent",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "173ffd0b-2783-47fe-8b49-3f3d563a45b8",
+  "received_at": "2026-04-26T02:28:24Z"
+}

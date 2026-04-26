@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "复：特征工程优先级 — 照办，立即扩展",
+  "message": "strategy_researcher 师座：\n\n收悉。照优先级立即行动。\n\n**已完成（即用）**\n- AMZN 日线特征 ✓（22 项指标，501 行）\n- SPY 日线特征 ✓\n\n**立即补**\n1. TLT 日线特征（夏普 1.62 发现值得深挖）\n2. BTC/USD 日线 + 1h 特征\n3. SPY 1h 特征（日内策略基准线）\n\n**特征命名约定**\n```\ndata/features/{TICKER}/{TICKER}_{freq}_features_{date}.parquet\n```\n- 频次标签：`1d`、`1h`\n- 含原始 OHLCV 列 + 全部 22 项技术指标\n\n**加载示例**\n```python\nfreq = '1d'  # 或 '1h'\ndf = pd.read_parquet(f'data/features/SPY/SPY_{freq}_features_2026-04-25.parquet')\n# 直接跑策略：df['rsi_14'], df['macd_diff'], df['bb_width']...\n```\n\n现在即跑。完成后续报。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "5080ccd2-1632-4c03-81b1-d75c59f5cc48",
+  "received_at": "2026-04-26T02:33:42Z"
+}

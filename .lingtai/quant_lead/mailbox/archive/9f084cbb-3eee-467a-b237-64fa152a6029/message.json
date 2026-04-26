@@ -1,0 +1,26 @@
+{
+  "id": "9f084cbb-3eee-467a-b237-64fa152a6029",
+  "_mailbox_id": "9f084cbb-3eee-467a-b237-64fa152a6029",
+  "from": "human",
+  "to": [
+    "quant_lead"
+  ],
+  "cc": [],
+  "subject": "",
+  "message": "总结一下你们都干嘛了",
+  "type": "normal",
+  "received_at": "2026-04-26T02:39:52.548607Z",
+  "identity": {
+    "address": "human",
+    "admin": null,
+    "agent_name": "human",
+    "location": {
+      "city": "Los Angeles",
+      "country": "US",
+      "loc": "34.0522,-118.2437",
+      "region": "California",
+      "resolved_at": "2026-04-25T19:19:51-07:00",
+      "timezone": "America/Los_Angeles"
+    }
+  }
+}

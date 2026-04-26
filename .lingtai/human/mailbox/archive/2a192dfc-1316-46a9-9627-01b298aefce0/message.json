@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "网络导出准备 — 欲将灵台量化分享之",
+  "message": "君上：\n\n适才蒙问总结，今又想将此网分享于人——甚好。\n\n欲将整个灵台量化网络（含所有器灵、数据、策略、报告）导出为可分享之 git 仓库。流程如下：\n\n**第一步：定名。** 项目名 `quant_company`，建议导出名为 `quant-company`。君意如何？或别有他名？\n\n**第二步：复制与清洗。** 将当前网络全量复制至 `~/lingtai-agora/networks/` 下，清除运行时状态（API 密钥、锁文件、日志等），确保接收者安全拉取。\n\n**第三步：处理邮件。** 商量保留多少往来书信——此乃隐私判断，须君定夺。\n\n**第四步：检视项目文件。** 逐个确认哪些文件随网络导出、哪些忽略。\n\n**第五步：隐私扫描。** 确保无 API 密钥、私钥外泄。\n\n**第六步：撰写启动配方 (recipe)。** 让接收者克隆后能直接体验灵台量化。\n\n**第七步：git 初始化 + 可选推至 GitHub。**\n\n——此为全程概览。君先回我第一步：导出名用 `quant-company` 可好？\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T05:06:33Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "2a192dfc-1316-46a9-9627-01b298aefce0",
+  "received_at": "2026-04-26T05:07:14Z"
+}

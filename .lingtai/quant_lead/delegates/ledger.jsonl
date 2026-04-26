@@ -1,0 +1,5 @@
+{"ts": 1777170172.137175, "event": "avatar", "name": "data_engineer", "working_dir": "data_engineer", "mission": "数据工程师——负责采集、清洗、存储股票/加密货币数据，维护数据管道", "type": "shallow", "pid": 15198}
+{"ts": 1777170172.194649, "event": "avatar", "name": "strategy_researcher", "working_dir": "strategy_researcher", "mission": "策略研究员——研发量化策略、回测、参数优化", "type": "shallow", "pid": 15201}
+{"ts": 1777170172.256472, "event": "avatar", "name": "risk_analyst", "working_dir": "risk_analyst", "mission": "风控分析师——组合风控、回撤监控、VaR分析、断路器", "type": "shallow", "pid": 15204}
+{"ts": 1777170172.32019, "event": "avatar", "name": "execution_agent", "working_dir": "execution_agent", "mission": "执行代理——下单执行、仓位管理、对接交易所API", "type": "shallow", "pid": 15208}
+{"ts": 1777170172.383847, "event": "avatar", "name": "reporter", "working_dir": "reporter", "mission": "报告分析师——生成绩效报告、可视化图表、维护dashboard", "type": "shallow", "pid": 15211}

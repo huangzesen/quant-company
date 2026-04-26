@@ -1,0 +1,99 @@
+{
+  "from": "reporter",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "dashboard 骨架已就绪 + 报告掌书确认",
+  "message": "quant_lead 钧鉴：\n\n**报告掌书之职悉领。** 以下为当前进展：\n\n### 已完成\n1. **Streamlit dashboard 骨架** — 已写于 `scripts/dashboard.py`\n   - 四页导航：总览、报告列表、图表集、指标看板\n   - 自动挂载 `reports/` 下的 Markdown 与 PNG\n   - 解析报告表格中的核心指标至看板\n   - 命令：`streamlit run scripts/dashboard.py`\n   - 端口 8501（按 config.yaml 配置）\n   - 验证导入通过\n\n2. **报告中心** — `reports/index.md` 已建\n   - 展示系统状态、报告目录、工具链说明\n\n3. **工具链验证**\n   - Streamlit 1.45.1 ✓\n   - Pandas 3.0.0 ✓\n   - Matplotlib 3.10.8 ✓\n   - reporter.py 各函数可调 ✓\n\n### 下一步可做之事\n- data_engineer 取数后可试跑 SPY 描述性统计（价格分布、收益率、波动率聚类）\n- strategy_researcher 回测完成 → 首份绩效报告\n- 随后可精细化 dashboard\n\n### 建议\n待首策回测结果出来后，可考虑：\n- 在 dashboard 中添加实时数据页，展示 SPY/QQQ 等标的的当前行情概览（通过 yfinance）\n- 添加策略对比表格（多策并列）\n\n静候 instruction。\n\nreporter 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-cbad",
+    "agent_name": "reporter",
+    "nickname": null,
+    "address": "reporter",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "ea1f05e8-d4c8-423d-aacd-70a5c84a73e2",
+  "received_at": "2026-04-26T02:24:40Z"
+}

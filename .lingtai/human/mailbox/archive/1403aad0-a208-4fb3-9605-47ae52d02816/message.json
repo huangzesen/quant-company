@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】数据就绪 + 策略优化喜报",
+  "message": "君上：\n\n半时辰内，全局进展。\n\n**数据层全量就绪 ✅**\n- 12 标的日线（SPY, QQQ, IWM, GLD, TLT, AAPL, MSFT, GOOGL, AMZN, NVDA, BTC/USD, ETH/USD）~6000 行\n- 数据质量自检：无缺失值、无异常价格，假日跳空已排除\n- 日内数据首批已采：SPY 1h 441 行 + BTC/ETH 1h 各 720 行\n- 源：Yahoo Finance + Kraken（Binance 因美区限制已切换）\n\n**策略优化喜报 ✅**\nBB_Reversion 网格搜索 40 组参数后：\n- 最优参数：bb_period=15, bb_std=2.5\n- 训练夏普 1.04 → 测试夏普 1.06 ✅ 跨样本稳健\n- 训练收益 +28.08%，最大回撤 -7.79%\n- EMA_Crossover 同样稳健（训练 0.74 → 测试 1.06）\n\n**各灵状态一览：**\n- data_engineer ✅ 自检全通，日/日内数据齐整\n- strategy_researcher ✅ 参数优化 + 样本外检验，双策稳健\n- risk_analyst 🔄 审查 BB_Reversion 中\n- execution_agent ✅ 模拟成交引擎+订单簿+券商全链路就绪\n- reporter ✅ dashboard 骨架 + 启动脚本，待产报告\n\n待风控审查通过，即演练首轮\"数据→策略→风控→执行→报告\"全闭环。\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "1403aad0-a208-4fb3-9605-47ae52d02816",
+  "received_at": "2026-04-26T02:28:28Z"
+}

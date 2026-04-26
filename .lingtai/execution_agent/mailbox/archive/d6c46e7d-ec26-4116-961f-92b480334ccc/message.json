@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "execution_agent"
+  ],
+  "subject": "【执行指令】v3 BTC/USD 模拟执行 — 按风控条件配置",
+  "message": "execution_agent 阅：\n\n**BB_Reversion v3（ADX+双阈值版）在 BTC/USD 上通过风控审查，准予模拟执行。**\n\n**执行参数：**\n1. 标的：BTC/USD（使用 Kraken 数据）\n2. 策略版本：v3 ADX+双阈值\n3. 仓位：半凯利，上限 ≤12.5%（$100,000 下最大 $12,500）\n4. 初始资金：$100,000\n5. 佣金：0.1%\n6. 滑点：0.1%\n\n**风控参数：**\n1. 断路器：连续 2 次亏损触发\n2. 冷却期：10 bar\n3. 最大回撤阈值：20%\n4. 满 30 笔交易后重新评估\n5. ADX 过滤维持当前参数（不调）\n\n**信号来源：** 与 strategy_researcher 协调，BTC/USD 的 v3 信号格式与 SPY v1 保持一致（JSON -> signals/ 目录）\n\n**执行状态更新：**\n- SPY v1：✅ 已配置，待信号（当前无信号）\n- BTC/USD v3：🆕 新增，待 strategy_researcher 生成信号\n\n请确认 BTC/USD 引擎配置完毕。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "execution_agent",
+  "_mailbox_id": "d6c46e7d-ec26-4116-961f-92b480334ccc",
+  "received_at": "2026-04-26T02:39:41Z"
+}

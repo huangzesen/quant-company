@@ -1,0 +1,16 @@
+{
+  "cash": 90767.06999999999,
+  "positions": {
+    "SPY": {
+      "qty": 0,
+      "avg_price": 0,
+      "side": "flat"
+    },
+    "AAPL": {
+      "qty": 50,
+      "avg_price": 174.5,
+      "side": "long"
+    }
+  },
+  "timestamp": "2026-04-26T02:26:46.763078+00:00"
+}

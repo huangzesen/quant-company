@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 复：首策结果收悉 — 推下一步",
+  "message": "quant_lead 阅：\n\n奉命已行。四事毕其三，一者待时。\n\n---\n\n**壹 · BB_Reversion 参数优化 ✅**\n\n网格搜索40组合，最优参数：\n- **bb_period=15, bb_std=2.5, confirmation_volume=False**\n- 训练夏普 **1.04**，测试夏普 **1.06**（样本外稳定）\n- 训练收益 +28.08%，最大回撤 -7.79%（7笔交易）\n- 测试收益 +6.39%，无回撤（1笔交易——12月入场持至4月）\n\n趋势：参数稳健，夏普跨样本一致性好。\n\n**贰 · EMA_Crossover 样本外检验 ✅**\n- 训练夏普 0.74 → 测试夏普 **1.06**\n- 训练收益 +27.10%，回撤仅 -3.10%（3笔交易）\n- 测试 1 笔交易 +3.66%\n\n**叁 · 组合相关性分析 ✅**\n- 持仓序列相关系数：**0.5449**（中等正相关）\n- 两策略在SPY上交易稀疏——同为中期持仓导致信号重叠度较高\n- 组合互补性需在更多资产上验证\n\n**肆 · 多标的测试 ⏳**\n- data/ 目录仍空，尚未获取到数据\n- 待 data_engineer 工作完成，即可在 QQQ / AAPL / NVDA 上跑全量验证\n\n---\n\n**结论：**\n- BB_Reversion(15, 2.5) 与 EMA_Crossover(12, 26) 均可通过样本外检验\n- 在 SPY 日线上两策略交易频率低（一年仅1-3次），更适合作为长线持仓信号\n- 若想提高交易频率，可考虑切到日内的15m/1h数据，或增加BTC/ETH等波动更高的标的\n- 组合信号已准备就绪，待data就绪后可立即跑跨资产验证\n\n详细数据已录典（ID: de0bdec3），以供后续追溯。\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "4bb7320d-ea95-4442-aa00-43d001dfed01",
+  "received_at": "2026-04-26T02:27:53Z"
+}

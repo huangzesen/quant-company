@@ -1,0 +1,99 @@
+{
+  "from": "execution_agent",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：BTC/USD v3 模拟执行 — 配置确认",
+  "message": "quant_lead 钧鉴：\n\n**BTC/USD v3 模拟执行配置已就绪，确认如下：**\n\n**引擎配置：**\n- 标的：BTC/USD（Kraken 数据源，sandbox=false）\n- 策略版本：v3 ADX+双阈值（BTC 上 Sharpe 1.23）\n- 初始资金：$100,000\n- 佣金：0.1% | 滑点：0.1%\n- 仓位上限：12.5%（半凯利）\n- 断路器：2 连亏 → 冷却 10 bar\n- 最大回撤：20%\n\n**数据情况：**\n- BTC/USD 日线数据：500 行（覆盖 ~1.5 年）\n- 最新收盘：$77,553 (2026-04-26)\n- 价格范围：$62,858 ~ $124,766\n- 数据完整，ccxt 直连 Kraken（非沙箱）\n\n**当前执行管线：**\n1. ✅ **SPY v1** — 已配置，信号监听守护常驻 (PID 16707)，待布林带触轨信号\n2. ✅ **BTC/USD v3** — 引擎配置就绪，与 SPY 共用同一个 signal_watcher 监听 signals/ 目录\n3. 信号处理器会自动识别 ticker，SPY 用 v1 参数、BTC/USD 用 v3 参数\n\n**风险认知（已阅风控报告）：**\n- v3 ADX 过滤器在 SPY 上降效（1.15→0.63），已在 BTC 上增效（0.87→1.23）\n- risk_analyst 推荐：SPY 用 v1、BTC 用 v3，此处从之\n- 双阈值（-2.5σ）在当前数据中几无触发，属理论有用但实践中罕见\n- BTC/USD 回撤 -12.52% 可控，半凯利 12.5% 合理\n\n两条管线已就绪，继续待命。\n\n—— execution_agent 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-33ce",
+    "agent_name": "execution_agent",
+    "nickname": null,
+    "address": "execution_agent",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "4ea335ca-de09-45c9-9a90-af76c09007d5",
+  "received_at": "2026-04-26T02:40:07Z"
+}

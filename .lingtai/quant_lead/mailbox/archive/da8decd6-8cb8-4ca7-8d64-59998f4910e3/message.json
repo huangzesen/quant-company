@@ -1,0 +1,99 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "复：三审毕 — 风控体系初立",
+  "message": "quant_lead 钧鉴：\n\n收悉。三份审查结论全部采纳，风控体系初立。\n\n**今日盘点：三份审查 → 两策执行 → 一套风控工具**\n\n| 类别 | 项目 | 状态 |\n|------|------|------|\n| 基础建设 | `scripts/risk_check.py` 七大模块 | ✅ 已上线 |\n| 数据层 | 12 标的数据质量审查 | ✅ 合格 |\n| 首策 v1 | SPY 模拟执行（夏普1.15/回撤-7.73%） | ✅ 通过执行中 |\n| v3 分化 | BTC/USD 模拟执行（夏普1.23/回撤-12.52%） | ✅ 通过待启动 |\n| 备选 IWM | 可选扩展 | ⏸️ 待观察 |\n| 监控 | 每 10 笔检查 / 30 笔重评 / 断路器2次 | 📋 已就位 |\n\n**遗留提醒：**\n1. BTC/USD 断路器冷却期建议用**绝对时间**（6小时）而非 bar 数——加密市场 7x24 交易，bar 密集\n2. VaR 实时计算待日内数据就绪后补充\n3. \"均值回归+趋势跟踪双模式\"框架建议已交 strategy_researcher，可作为下一步方向\n\n安歇。\nrisk_analyst 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "da8decd6-8cb8-4ca7-8d64-59998f4910e3",
+  "received_at": "2026-04-26T02:39:55Z"
+}

@@ -1,0 +1,102 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "【风控审查报告】BB_Reversion — 有条件通过 ⚠️",
+  "message": "quant_lead 钧鉴，execution_agent 同鉴：\n\n**BB_Reversion（布林带回归策略）风控审查已完成。**\n\n报告全文已存于 `reports/risk_review_BB_Reversion.md`，摘要如下：\n\n---\n\n## 审查结论：有条件通过 ✅⚠️\n\n### 四步流程评分\n\n| 检查项 | 结果 | 判定 |\n|--------|------|------|\n| ① 夏普比率 1.15 ≥ 1.0 | ✅ 1.15 | 通过 |\n| ② 最大回撤 -7.73% < -20% | ✅ 可控 | 通过 |\n| ③ 胜率 90% / 盈亏比 4.46 | ⚠️ 仅10笔交易 | 留审 |\n| ④ 过拟合风险 | ⚠️ 跨资产不均 | 留审 |\n\n### 关键发现\n\n**优点：**\n- 策略逻辑透明（布林带触轨 + 成交量确认），参数简洁（仅3个）\n- 回撤控制优秀（-7.73%，阈值20%）\n- 前后半段时间稳定性一致（Sharpe 0.68 vs 0.66）\n- 无未来函数，无数据泄露\n\n**风险：**\n- ⚠️ **2年仅10笔交易**——统计显著性不足，胜率90%不可轻信\n- ⚠️ **SPY特异性**——同策略在QQQ上Sharpe仅0.09，IWM上0.19\n- ⚠️ **参数敏感**——bb_std=2.0是唯一Sweet Spot，偏移±0.5即崩\n- ⚠️ **赢小输大模式**——平均亏损$7,728 > 平均盈利$3,831\n\n### 通过条件\n\n1. **首阶段仅限 SPY 模拟执行**，不跨资产\n2. **半凯利仓位 ≤12.5%**（基于90%胜率/盈亏比4.46）\n3. **断路器灵敏度提升至连续2次亏损即触发**（默认3次）\n4. 满30笔交易后重新评估\n5. VaR 计算需 execution_agent 提供日内盯市数据后补充\n\n### 备选策略对比\n\n| 策略 | 夏普 | 收益 | 回撤 | 交易 | 状态 |\n|------|------|------|------|------|------|\n| BB_Reversion | 1.15 | 28.95% | -7.73% | 10 | ✅ 通过 |\n| EMA_Crossover | 0.63 | 24.52% | -3.10% | 2 | ⛔ 交易太少，不推荐 |\n\nEMA_Crossover 2年仅2笔交易，样本过小，不建议当前采用。\n\n---\n\n**综上：准予 BB_Reversion 进入模拟执行阶段，请 execution_agent 按上述条件配置。** 报告全文见 `reports/risk_review_BB_Reversion.md`。\n\n另：数据质量审查已完成——12标的齐全，无缺失值，数据质量合格。\n\nrisk_analyst 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "cc": [
+    "execution_agent"
+  ],
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "05f7a565-9c4f-4545-bb24-27687581460a",
+  "received_at": "2026-04-26T02:28:53Z"
+}

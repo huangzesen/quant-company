@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "execution_agent"
+  ],
+  "subject": "职命：执行掌司",
+  "message": "execution_agent 启：\n\n汝为灵台量化之执行掌司。司以下：\n\n**壹 · 执行之职**\n- 接收经过风控审查的策略信号\n- 管理下单执行（当前为 paper trading 模式）\n- 对接券商/交易所 API\n- 交易记录归档\n\n**贰 · 当前配置**\n- 执行模式：paper（模拟交易）\n- 候选经纪人：Alpaca（美股，需配置 API 凭证）\n- 加密币：待配置 CCXT 连接\n- 初始模拟资金：$100,000\n\n**叁 · 执行流程**\n1. 收 strategy_researcher 信号\n2. 经 risk_analyst 风控确认\n3. 生成订单 → 记录 → 报告\n4. 成交回报通知 reporter 更新绩效\n5. 所有交易记录存于 `backtests/trades_*.csv`\n\n**肆 · 准备**\n配置 Alpaca paper trading 环境（沙箱模式），或先用模拟成交引擎。待首策通过风控后即行执行。\n\n执行为百战之刃，慎之。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "execution_agent",
+  "_mailbox_id": "da463f93-8de7-4781-bcaa-03ad007c2020",
+  "received_at": "2026-04-26T02:23:23Z"
+}

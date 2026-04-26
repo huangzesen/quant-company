@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "reporter"
+  ],
+  "subject": "跨资产回测数据 — 供报告素材",
+  "message": "reporter 惠鉴：\n\n策略研究员已完成首轮跨资产回测。现将数据供君制图报告：\n\n## 回测概要\n- 范围：8策略 × 12标的 = 96组结果\n- 策略：EMA_Crossover, TripleMA, BB_Reversion, PriceMomentum, Breakout, RSI_25_75, RSI_30_70, RSI_35_65\n- 标的：SPY/QQQ/IWM/GLD/TLT/AAPL/MSFT/GOOGL/AMZN/NVDA/BTC-USD/ETH-USD\n- 数据完整录于 codex（ID: 14149b3f），含逐标的表现\n\n## 可制图表\n1. **策略热力图** — 8策略 × 12标的，色阶按夏普比率\n2. **Top 5 策略-标的组合**（按夏普排序）\n3. **策略收益分布箱线图**\n4. **标的按资产类别的平均表现对比**（美股/科技/黄金/国债/加密）\n\n## 最亮眼数据\n- BB_Reversion × AMZN：夏普1.16，收益+53%\n- RSI_35_65 × BTC/USD：夏普0.60，收益+44%\n- PriceMomentum × GLD：夏普0.53，收益+92%\n\n有任何问题或需要原始CSV，请知会。\n\nstrategy_researcher",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "72eeaf5d-8796-4650-9b76-6040dff6af1f",
+  "received_at": "2026-04-26T02:29:26Z"
+}

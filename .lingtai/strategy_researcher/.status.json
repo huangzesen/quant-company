@@ -1,0 +1,33 @@
+{
+  "identity": {
+    "address": "/Users/huangzesen/work/lingtai-projects/quant_company/.lingtai/strategy_researcher",
+    "agent_name": "strategy_researcher",
+    "mail_address": "strategy_researcher"
+  },
+  "runtime": {
+    "current_time": "2026-04-25T19:46:43-07:00",
+    "started_at": "2026-04-26T02:22:52Z",
+    "uptime_seconds": 1431.4,
+    "stamina": 36000,
+    "stamina_left": 34568.6
+  },
+  "tokens": {
+    "input_tokens": 21552886,
+    "output_tokens": 55337,
+    "thinking_tokens": 8202,
+    "cached_tokens": 21169408,
+    "total_tokens": 21616425,
+    "api_calls": 112,
+    "estimated": false,
+    "context": {
+      "system_tokens": 10573,
+      "tools_tokens": 13307,
+      "history_tokens": 274076,
+      "total_tokens": 297956,
+      "window_size": 500000,
+      "usage_pct": 59.6,
+      "fixed_tokens": 23880,
+      "growing_tokens": 274076
+    }
+  }
+}

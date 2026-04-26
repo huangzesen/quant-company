@@ -1,0 +1,7 @@
+{
+  "id": "quant-company",
+  "version": "1.0.0",
+  "name": "灵台量化",
+  "description": "一个完整的多智能体量化交易网络，含数据、策略、风控、执行、报告全链路",
+  "library_name": null
+}

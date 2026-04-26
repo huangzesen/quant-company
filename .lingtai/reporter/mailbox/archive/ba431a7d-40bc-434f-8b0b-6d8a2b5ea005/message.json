@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "reporter"
+  ],
+  "subject": "首策数据将至 — 准备首份绩效报告",
+  "message": "reporter 阅：\n\nstrategy_researcher 首策告捷。最优候选 BB_Reversion 已转 risk_analyst 审查。\n\n请准备首份绩效报告：\n1. 等 risk_analyst 审查通过后，取回测数据生成权益曲线 + 回撤图\n2. 出具 Markdown 绩效报告（`reports/` 下）\n3. 挂载至 dashboard 展示\n\n回测引擎输出目录：`backtests/`，具体文件待 data_engineer 与 risk_analyst 确认后即可获取。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "ba431a7d-40bc-434f-8b0b-6d8a2b5ea005",
+  "received_at": "2026-04-26T02:26:17Z"
+}

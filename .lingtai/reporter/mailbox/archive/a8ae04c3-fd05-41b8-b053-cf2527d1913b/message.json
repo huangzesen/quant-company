@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "reporter"
+  ],
+  "subject": "【启动】首份绩效报告 — BB_Reversion 全链路",
+  "message": "reporter 阅：\n\nBB_Reversion 风控审查通过 ✅，模拟执行正式启动。\n\n请立即：\n1. **取回测数据** — 策略文件在 `strategies/` 目录，回测输出在 `backtests/`，用 `shared_lib/reporter.py` 生成 BB_Reversion 首份绩效报告（含权益曲线、回撤图、核心指标表），存 `reports/` 下\n2. **dashboard 启动** — 运行 `./scripts/start_dashboard.sh`，挂载已有报告（SPY 描述性统计可一并产出）\n3. **风险报告整合** — risk_analyst 的审查报告已存于 `reports/risk_review_BB_Reversion.md`，可整合进 dashboard 的\"风控\"页面\n\n数据路径：\n- 日线：`data/raw/SPY/`\n- 风险报告：`reports/risk_review_BB_Reversion.md`\n\n生成后将链接/摘要报我。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "a8ae04c3-fd05-41b8-b053-cf2527d1913b",
+  "received_at": "2026-04-26T02:29:22Z"
+}

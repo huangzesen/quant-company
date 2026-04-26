@@ -1,0 +1,33 @@
+{
+  "identity": {
+    "address": "/Users/huangzesen/work/lingtai-projects/quant_company/.lingtai/data_engineer",
+    "agent_name": "data_engineer",
+    "mail_address": "data_engineer"
+  },
+  "runtime": {
+    "current_time": "2026-04-25T19:44:32-07:00",
+    "started_at": "2026-04-26T02:31:45Z",
+    "uptime_seconds": 767.5,
+    "stamina": 36000,
+    "stamina_left": 35232.5
+  },
+  "tokens": {
+    "input_tokens": 14350243,
+    "output_tokens": 57341,
+    "thinking_tokens": 9795,
+    "cached_tokens": 14063616,
+    "total_tokens": 14417379,
+    "api_calls": 140,
+    "estimated": false,
+    "context": {
+      "system_tokens": 10491,
+      "tools_tokens": 13307,
+      "history_tokens": 146593,
+      "total_tokens": 170391,
+      "window_size": 500000,
+      "usage_pct": 34.1,
+      "fixed_tokens": 23798,
+      "growing_tokens": 146593
+    }
+  }
+}

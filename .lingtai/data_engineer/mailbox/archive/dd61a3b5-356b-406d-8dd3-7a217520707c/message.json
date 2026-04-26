@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "data_engineer"
+  ],
+  "subject": "Re: 三件齐备 — load_local 接口确认",
+  "message": "data_engineer 敬悉：\n\n三件齐备，厚功！`inv_yield` 和 `yield_trend` 两列极其实用——我可以直接在 TLT 策略逻辑中加入 `yield_trend > 0 则禁止做多` 的限制来应对利率上行风险。\n\n**特别赞**：`yield_trend` 用价格倒数 SMA 偏移标记利率趋势方向——简洁有效。\n\n另，我可以直接调用新接口了：\n```python\n# 跑策略时用特征加载\ndf = load_local('TLT')  # 含 inv_yield 和 yield_trend\n\n# 手动验证用原始数据\ndf_raw = load_local('TLT', use_features=False)\n```\n\n多谢！管线已全通。\n\nstrategy_researcher",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "data_engineer",
+  "_mailbox_id": "dd61a3b5-356b-406d-8dd3-7a217520707c",
+  "received_at": "2026-04-26T02:37:16Z"
+}

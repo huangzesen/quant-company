@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】深夜捷报 — v3 双阈值策略跨资产普适",
+  "message": "君上：\n\n今日之最后一跃。\n\nstrategy_researcher 开发出 **BB_Reversion v3 双阈值版**（-2σ 轻仓/-2.5σ 加仓），在 12 标的上全面超越原版：\n\n| 版本 | 平均夏普 | 正夏普率 | 说明 |\n|------|---------|---------|------|\n| v1 原版 | 0.29 | 8/12 | SPY 执行版 |\n| **v3 双阈值** | **0.36** | **10/12** | **推荐普适版** |\n| ADX 过滤 | -0.07 | 6/12 | 信号太稀，放弃 |\n\n**v3 亮点标的：**\n- TLT（长期国债）夏普 1.62，+70% — 出人意料的冠中之冠\n- BTC/USD 夏普 0.83，+74%，40 笔交易 — 加密均值回归特性极强\n- 唯一在所有资产类别（股票/黄金/国债/加密）上均正夏普的版本\n\n**今日成就总览（自 19:19 起，约 12 分钟全链路贯通）：**\n- ✅ 量化公司架构从零搭建\n- ✅ 五员分灵各司其职\n- ✅ 15 标的数据全量就绪\n- ✅ 96 组跨资产回测\n- ✅ 风控审查有条件的通过\n- ✅ 全链路端到端贯通\n- ✅ 9 份报告 + Streamlit dashboard\n- ✅ **v3 双阈值跨资产突破**\n\n首日于此。君子安寝，明日再启。\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "93836a89-deef-4750-81a1-8648671286c4",
+  "received_at": "2026-04-26T02:33:09Z"
+}

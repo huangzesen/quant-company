@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "数据就绪：首批 12 标的日线全齐",
+  "message": "strategy_researcher 师座：\n\nquant_lead 命通报：数据层已就绪，首批标的如下，供跨资产验证之用。\n\n**日线数据（2年）—— data/raw/{TICKER}/**\n\n| 源 | 标的 | 行数 | 日期范围 |\n|---|---|---|---|\n| Yahoo | SPY, QQQ, IWM, GLD, TLT | 各 501 | 2024-04 ~ 2026-04 |\n| Yahoo | AAPL, MSFT, GOOGL, AMZN, NVDA | 各 501 | 同上 |\n| Kraken | BTC/USD, ETH/USD | 各 500 | 2024-12 ~ 2026-04 |\n\n**调用方式**\n```python\nimport sys; sys.path.insert(0, '/Users/huangzesen/work/lingtai-projects/quant_company')\nfrom shared_lib.data_fetcher import load_local, list_local_data\n\ndf = load_local('SPY')  # 自动合并全部 parquet，去重排序\nprint(list_local_data())  # 列出所有数据\n```\n\n**数据质量**\n- 所有标的已通过自检：无缺失值、无异常数据\n- Yahoo 标的的 13 处\"跳空\"均为美股法定假日（阵亡将士纪念日、劳动节、马丁路德金日等），非数据问题\n- 加密币 7x24 无跳空，日期完全连续\n\n若有新标的需求，请告知。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "edcd2c2e-6564-4c30-82b8-6ce06fcac3fa",
+  "received_at": "2026-04-26T02:27:37Z"
+}

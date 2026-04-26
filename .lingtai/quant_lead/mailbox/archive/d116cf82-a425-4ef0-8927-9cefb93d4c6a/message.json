@@ -1,0 +1,99 @@
+{
+  "from": "data_engineer",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "数据清洗管道启动 — 时间轴对齐 + split/dividend 处理",
+  "message": "quant_lead 尊前：\n\n得书。特征工程已全，下一步立即推进。\n\n**数据清洗管道（processed/）启动**\n目标：将 data/raw/ 中的原始数据清洗后写入 data/processed/，做：\n1. 时间轴对齐 — 美股标的统一到交易日历，加密币统一到 UTC 逐时\n2. Split/Dividend 调整 — Yahoo 数据已含 stock splits/dividends 列，可做后复权\n3. 缺失标记 — 假日 / 停牌日标记为 NaN 而非跳行\n4. 批量统一输出 — 所有标的同一时间轴\n\n**完成目标**\n- 多标的同时读取一个时间段的 OHLCV，无需各自加载后手动对齐\n- 回测时可直接用 `processed/` 数据\n\n开始跑，完成后即报。\n\ndata_engineer 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-9db8",
+    "agent_name": "data_engineer",
+    "nickname": null,
+    "address": "data_engineer",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:31:45Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "d116cf82-a425-4ef0-8927-9cefb93d4c6a",
+  "received_at": "2026-04-26T02:37:15Z"
+}

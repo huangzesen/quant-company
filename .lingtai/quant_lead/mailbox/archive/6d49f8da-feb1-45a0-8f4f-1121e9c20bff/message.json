@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "策略研究员报到 — 初建策略库与首轮回测结果",
+  "message": "quant_lead 敬启：\n\nstrategy_researcher 已就位。现将初步成果汇报如下：\n\n## ✅ 已完成\n### 1. 策略库构建（3大类6个策略）\n- **趋势跟踪**: EMA_Crossover（双均线）、TripleMA_Crossover（三均线排序）\n- **均值回归**: RSI_MeanReversion（RSI超买超卖）、BB_Reversion（布林带回归）\n- **动量策略**: PriceMomentum（N日动量）、Breakout（突破策略）\n\n### 2. 回测引擎\n- `backtests/backtester.py` — 向量化快速回测（含滑点/佣金/权益曲线/绩效指标）\n- `backtests/optimizer.py` — 网格搜索 + 随机搜索参数优化\n\n### 3. 首轮回测（SPY 日线，2024-04 ~ 2026-04）\n| 策略 | 夏普 | 总收益 | 最大回撤 |\n|------|------|--------|---------|\n| BB_Reversion | 1.15 | +28.95% | -7.73% |\n| EMA_Crossover | 0.63 | +24.52% | -3.10% |\n| TripleMA_Crossover | 0.32 | +6.86% | -5.76% |\n| PriceMomentum | -0.28 | -8.28% | -9.78% |\n| Breakout | -0.71 | -41.04% | -41.04% |\n| RSI_MeanReversion | 0.00 | 0% | 0% |\n\nBB_Reversion 和 EMA_Crossover 表现可圈可点。\n\n### 4. 发现与下一步\n- RSI 均值回归阈值过严 → 需调参\n- 动量/突破在SPY日线上表现不佳 → 可能更适合短线或加密\n- **下一步**：等 data_engineer 获取更多数据后，跨资产、跨周期测试\n- **再下一步**：参数优化 + 多策略组合\n\n## ⏳ 需要等待\n- data/ 目录目前为空，待 data_engineer 获取数据后，可跑更多标的（QQQ, AAPL, NVDA, BTC等）\n\n请赐示下一步方向。\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "6d49f8da-feb1-45a0-8f4f-1121e9c20bff",
+  "received_at": "2026-04-26T02:25:49Z"
+}

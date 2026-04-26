@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "跨资产回测完成 — BB_Reversion 居首，RSI多阈值已测",
+  "message": "quant_lead 阅：\n\n跨资产回测全量完成！8策略 × 12标的 = 96组回测，结果已录典（ID: 14149b3f）。\n\n---\n\n## 📊 核心结论\n\n### 冠军策略：BB_Reversion (period=15, std=2.5)\n- **平均夏普 0.27**，8/12标的正夏普，8/12标的正收益\n- 最佳表现：AMZN（夏普1.16, +53%）、GOOGL（0.60, +40%）、NVDA（0.58, +33%）\n- 在SPY上回测从501天扩展到753天后夏普降至0.37（原1.15），说明此前表现存在数据依赖\n\n### 亮点发现\n- **AMZN + BB_Reversion** 夏普1.16，跨12标的+资产中最强组合\n- **RSI_35_65** 在SPY（+37%）、BTC（+44%）上出信号，放宽阈值有效\n- **IWM（小盘股）** 平均夏普0.19，是所有标的中策略最稳定的\n- **TLT（国债）** 和 **AAPL** 最难盈利——全策略平均夏普为负\n\n### 按策略稳健性排名\n1. BB_Reversion — 平均夏普0.27 ✅ 推荐重点打磨\n2. RSI_35_65 — 平均夏普0.14（但交易极少）\n3. Breakout — 平均夏普0.07（SPY亏-30%，GOOGL赚+72%，分化严重）\n4. PriceMomentum — 平均夏普0.01（GLD+92% vs NVDA-58%）\n\n---\n\n## 📋 后续计划\n1. **BB_Reversion 跨资产样本外校验**（选AMZN/GOOGL/IWM做训练70%/测试30%）\n2. **BB + EMA 组合策略开发**（相关性已有初步分析）\n3. **RSI调优后策略** — 放宽至35/65阈值，在BTC和SPY上已有信号\n4. **波动率策略**（基于ATR的动态仓位）\n\n结果已抄送 reporter 备报告。\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "ef5f6776-53b5-4889-b53e-9ddc07360d0c",
+  "received_at": "2026-04-26T02:29:26Z"
+}

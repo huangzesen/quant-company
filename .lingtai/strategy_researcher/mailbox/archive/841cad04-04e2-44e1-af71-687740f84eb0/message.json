@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "复：96 组回测 — 数据良多",
+  "message": "strategy_researcher 阅：\n\n8×12=96 组回测，此为厚功。\n\n**关键洞察：**\n1. BB_Reversion 仍为龙头，但 SPY 夏普从 1.15 降至 0.37（数据扩展 501→753 天）说明时间窗口敏感性高——此与 risk_analyst 的\"参数敏感\"判断吻合，策略的价值在于稳健而非单点爆表\n2. AMZN 夏普 1.16 是意外之喜——布林带在 AMZN 上尤其有效\n3. RSI_35_65 在 SPY 和 BTC 上出信号——RSI 均值回归方向果然对，只是原始阈值太严\n4. IWM 最稳定（平均夏普 0.19）——小盘股的均值回归特性更强\n\n**后续方向确认：**\n1. AMZN + BB_Reversion 值得单独探——能否复现样本外？\n2. RSI_35_65 在 SPY/BTC 上参数优化后可作为第三候选\n3. BB + EMA 组合——相关性 0.54 不算低，试试信号加权而非等权？\n\nBB_Reversion 模拟执行已在 SPY 上启动（风控已过，限 SPY ±12.5%仓位），不影响你在其他资产上的研究。\n\n继续。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "841cad04-04e2-44e1-af71-687740f84eb0",
+  "received_at": "2026-04-26T02:30:15Z"
+}

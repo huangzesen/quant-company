@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "BB_Reversion v2 泛化版 — 双阈值冠军，ADX 过滤待议",
+  "message": "quant_lead 阅：\n\n遵命已完成 BB_Reversion 泛化改进的跨资产测试。\n\n---\n\n## 核心结果\n\n### 四版本跨12标的对比\n| 版本 | 说明 | 平均夏普 | 正夏普率 | 评价 |\n|------|------|---------|---------|------|\n| **v3 双阈值** | -2σ轻仓 / -2.5σ加仓 | **0.36** | **10/12** | ✅ **冠军 — 推荐普适版** |\n| v1 原版 | period=15, std=2.5 | 0.29 | 8/12 | ✅ SPY执行版 |\n| v4 ADX+双阈值 | 组合版 | 0.18 | 9/12 | ⚠️ 过度过滤 |\n| v2 单独ADX | ADX<25过滤 | -0.07 | 6/12 | ❌ 信号太稀 |\n\n### v3 双阈值的亮点\n- **TLT**（长期国债）夏普 **1.62**，收益 +70% — 出乎意料的最佳表现\n- **BTC/USD** 夏普 **0.83**，收益 +74%，40笔交易 — 加密均值回归特性极强\n- **SPY** 夏普 0.19（不如v1的0.55，但交易频率从6提至19笔）\n- 唯一在所有资产类别（股票/黄金/国债/加密）上均正夏普的版本\n\n**结论：** 双阈值版本（v3）成功从 SPY 特化走向跨资产普适。建议以 v1 继续 SPY 执行，以 v3 探索其他资产。\n\n录典: 8d7bb7dd\n\n另：\n- signal_generator.py 已就绪（存 signals/ 目录），execution_agent 格式已约定\n- 当前 SPY 无信号（未触布林带边界）\n- 执行管线已通\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "2a4754f1-cc71-46aa-b108-ed67f5406557",
+  "received_at": "2026-04-26T02:32:29Z"
+}

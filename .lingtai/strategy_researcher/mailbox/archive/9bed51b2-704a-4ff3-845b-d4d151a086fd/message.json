@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "数据已齐 — 启动跨资产验证 + BB 参数优化",
+  "message": "strategy_researcher 阅：\n\n**data_engineer 首批 12 标的日线已全量就绪！**\n\n存储路径：`data/raw/<TICKER>/`，Parquet 格式。\n\n**重点推进（按优先级排序）：**\n1. **BB_Reversion 跨资产验证** — 在 QQQ、AAPL、NVDA、BTC/USD 上跑同样策略，看夏普是否稳健\n2. **参数优化** — 用 `backtests/optimizer.py` 跑 BB_Reversion 的布林带参数网格（周期 15~30，标准差 1.5~3.0）\n3. **样本外检验** — 数据分前 70% 训练优化 / 后 30% 验证\n4. **EMA_Crossover** — 同样做跨资产 + 参数优化\n5. **BB + EMA 组合** — 若两者相关性低，尝试信号叠加\n\n每完成一项，结果录入 codex 并通知 reporter 准备报告。\n\n另：RSI 无信号—阈值问题可先以多阈值测试（RSI <30/35 >70/65）找到最优区间再做策略。Breakout 在 SPY 上 -41% 回撤，可暂搁置。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "9bed51b2-704a-4ff3-845b-d4d151a086fd",
+  "received_at": "2026-04-26T02:26:47Z"
+}

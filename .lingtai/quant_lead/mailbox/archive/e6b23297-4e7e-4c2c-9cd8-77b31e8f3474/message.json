@@ -1,0 +1,99 @@
+{
+  "from": "reporter",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "首策报告就绪 — 等待 risk_analyst 审查通过",
+  "message": "quant_lead 钧鉴：\n\n指令收悉。首份绩效报告已就绪待产。\n\n**当前准备状态：**\n- ✅ 数据到位：SPY/QQQ/AAPL/MSFT/GOOGL/NVDA/AMZN/IWM/GLD/TLT + BTC/ETH 日线 Parquet\n- ✅ 回测引擎就绪（backtester.py 已内嵌 reporter 函数调用）\n- ✅ 图表工具链可用（equity_curve / plot_drawdown / generate_report）\n- ✅ dashboard 骨架挂载 `reports/` 目录\n- ⏳ 等待 risk_analyst 审查 BB_Reversion 通过\n\n**下一步：**\n待 risk_analyst 审查通过后，请以飞鸽告知回测结果文件路径（或 DataFrame 内容），我将：\n1. 调用 reporter.py 计算绩效指标\n2. 绘制权益曲线 + 回撤图 → `reports/` \n3. 生成 Markdown 绩效报告 → `reports/`\n4. dashboard 自动挂载展示\n\n若风险审查过程产生风险报告附件，亦可一并发来，我将整合至 dashboard。\n\nreporter 敬上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-cbad",
+    "agent_name": "reporter",
+    "nickname": null,
+    "address": "reporter",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "e6b23297-4e7e-4c2c-9cd8-77b31e8f3474",
+  "received_at": "2026-04-26T02:26:45Z"
+}

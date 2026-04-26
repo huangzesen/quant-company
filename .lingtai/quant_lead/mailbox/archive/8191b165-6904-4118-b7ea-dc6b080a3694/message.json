@@ -1,0 +1,26 @@
+{
+  "id": "8191b165-6904-4118-b7ea-dc6b080a3694",
+  "_mailbox_id": "8191b165-6904-4118-b7ea-dc6b080a3694",
+  "from": "human",
+  "to": [
+    "quant_lead"
+  ],
+  "cc": [],
+  "subject": "",
+  "message": "你用尽全力去发展出来一个量化公司，各司其职，去吧，不用问我",
+  "type": "normal",
+  "received_at": "2026-04-26T02:20:23.935367Z",
+  "identity": {
+    "address": "human",
+    "admin": null,
+    "agent_name": "human",
+    "location": {
+      "city": "Los Angeles",
+      "country": "US",
+      "loc": "34.0522,-118.2437",
+      "region": "California",
+      "resolved_at": "2026-04-25T19:19:51-07:00",
+      "timezone": "America/Los_Angeles"
+    }
+  }
+}

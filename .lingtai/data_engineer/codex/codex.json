@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "4fd8760b",
+      "title": "初始数据采集完成 — 2026-04-25",
+      "summary": "首批数据管道搭建完成。Yahoo Finance 10 股全量（2年日线），Kraken 2 加密币（500根日K）。Binance 因地理位置受限，已切换至 Kraken。",
+      "content": "## 数据源状态\n- **Yahoo Finance**: SPY, QQQ, IWM, GLD, TLT, AAPL, MSFT, GOOGL, AMZN, NVDA — 各501行（~2年日线 parquet）\n- **Kraken (CCXT)**: BTC/USD, ETH/USD — 各500行（日线 parquet）\n- **Binance**: 因美国地区限制（HTTP 451），已禁用沙箱及主网\n- **Alpaca**: 未启用\n\n## 存储结构\n- raw: data/raw/{TICKER}/*.parquet\n- 格式: Parquet (列式压缩)\n- 默认频次: 1d\n\n## 管道脚本\nscripts/ingest_all.py — 支持 --stocks / --crypto / --all / --status",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:25:42.941959+00:00"
+    },
+    {
+      "id": "e3d9eba7",
+      "title": "日内数据接入（1h）— 2026-04-25 首批",
+      "summary": "SPY 1h（441行，~3月）、BTC/USD 1h（720行，~30天）、ETH/USD 1h（720行，~30天）已采集。SPY受Yahoo API日内限制、Kraken受单次请求上限限制。",
+      "content": "## 日内数据（1h）首次接入\n\n| 标的 | 行数 | 时间跨度 | 数据源 | 限制说明 |\n|---|---|---|---|---|\n| SPY | 441 | 2026-01-26 ~ 2026-04-24 | Yahoo Finance | 约3个月（Yahoo对日内数据有限制） |\n| BTC/USD | 720 | 2026-03-27 ~ 2026-04-26 | Kraken (CCXT) | 30天（单次 fetch_ohlcv limit=720） |\n| ETH/USD | 720 | 2026-03-27 ~ 2026-04-26 | Kraken (CCXT) | 同上 |\n\n## 自检结果（日线）\n- 12标的全通过：无缺失值、无异常价格\n- Yahoo 标的各有13处4天跳空，经核均为美股法定假日（Memorial Day、Labor Day、MLK Day等）\n- 加密币（7x24）无跳空，日期完全连续",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:28:09.028800+00:00"
+    },
+    {
+      "id": "dfbf481b",
+      "title": "管道增强 + GLD/TLT 日内 + 质量检查全通 — 2026-04-25",
+      "summary": "日内数据全检通过。GLD/TLT 1h已补。ingest_all.py 重构为多模式脚本（--daily增量、--intraday、--quality）。共14标的×2频次，~10,800行洁净数据。",
+      "content": "## 第二波进展\n\n### 日内数据质量\n- SPY 1h: 441行, 无缺失, 收盘价 $488-$714\n- BTC/USD 1h: 720行, 逐小时连续\n- ETH/USD 1h: 720行, 逐小时连续\n\n### GLD/TLT 1h 补采\n- GLD 1h: 441行 (2026-01-26 ~ 04-24)\n- TLT 1h: 441行 (同上)\n\n### 管道脚本重构\n- `--daily`: 增量更新（检测已有数据，只补缺失）\n- `--intraday`: 采集全部标的 1h 数据\n- `--quality`: 一键质量检查\n- `--tickers`: 指定标的\n- 可扩展 15m/5m/1m 频次",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:29:59.265213+00:00"
+    },
+    {
+      "id": "0b3f4eaf",
+      "title": "BTC 1h 扩展受限 — Kraken API 回溯上限 ~720 条",
+      "summary": "Kraken 公开 API 对 1h OHLCV 的回溯深度限制约720条（30天），since参数无效。需每日增量积累才可扩展至3个月。",
+      "content": "## Kraken API 限制\n\n### 问题\n尝试将 BTC/USD 1h 从 30 天扩展到 3 个月（90天≈2160条）。\n\n### 发现\n- CCXT fetch_ohlcv(limit=720) 确实返回最多 720 条\n- 传 `since` 参数后，返回值与不传 `since` 完全相同——API 忽略 since，只返回最近 720 条\n- 这是 Kraken 公开 REST API 的客观限制\n\n### 解决方案\n- 短期：先用现有 30 天数据\n- 长期：每日增量积累（ingest_all.py 已支持 --daily）\n- 替代源（需 API Key）：Alpha Vantage、Polygon.io、Tiingo",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:30:50.107522+00:00"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "597870ba",
+      "title": "ExecutionEngine 配置参数",
+      "summary": "模拟执行引擎的初始资金、佣金率、滑点等关键参数，供所有策略信号执行时复用",
+      "content": "ExecutionEngine & SimulatedBroker 关键参数（源自 config.yaml）\n\n【初始资金】$100,000（config.backtest.default_capital）\n【佣金率】0.001 (0.1%)（config.backtest.commission）\n【滑点】0.001 (0.1%)（config.backtest.slippage）\n【最大持仓比例】25%（config.risk.max_position_size）\n【最大回撤限制】20%（config.risk.max_drawdown）\n【执行模式】paper（config.execution.mode）\n【运行模式】simulation（默认，无需 API 凭证）\n\n引擎路径:\n- shared_lib/execution_engine.py（库模块，可 import 使用）\n- scripts/simulated_broker.py（独立模拟券商，含订单簿撮合）\n\n测试验证:\n- SPY 模拟买入 100 股 @ $500（含滑点 $500.50）→ 卖出 @ $510（含滑点 $509.49）→ 净盈 $848.05\n- 限价单挂入订单簿 @ $175 → 行情跌至 $174.50 触发成交\n- 止损单 @ $490 → 行情跌至 $489 触发止损\n- 资金不足时自动部分成交",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:27:20.316188+00:00"
+    },
+    {
+      "id": "27fecca6",
+      "title": "ExecutionEngine 与 SimulatedBroker 架构概要",
+      "summary": "量化交易系统的两层执行架构：轻量引擎（库模块）与全功能模拟券商（独立组件）",
+      "content": "量化执行层由两个组件构成：\n\n【ExecutionEngine】— shared_lib/execution_engine.py\n- 用途：轻量库模块，直接 import 使用的执行工具\n- 能力：市价单/限价单，模拟成交（滑点+佣金），仓位管理，交易记录\n- 订单状态机：pending → filled / partial / cancelled / rejected\n- 资金不足：自动部分成交或拒单\n- 缓存最新行情，限价单自动匹配\n\n【SimulatedBroker】— scripts/simulated_broker.py\n- 用途：独立模拟券商，含完整订单簿撮合引擎\n- 订单类型：市价单、限价单、止损单、止损限价单\n- 订单簿：买/卖队列排序，深度查询（get_order_book）\n- 行情驱动：tick() 自动撮合限价单、检查止损单\n- 市场开关：set_market_state(open=False) 时拒单\n- 状态持久化：save_state/load_state (JSON)，交易记录 CSV\n\n【全链路测试】— scripts/test_execution_edge_cases.py\n- 22 项边缘情况测试全部通过\n- 覆盖：资金不足、拒单、无行情挂起、限价挂单、取消单、\n  多批次买卖、做空、滑点精度、止损触发、市场关闭、\n  状态持久化、大量挂单撮合、历史行情回放\n\n【回放测试结果】100 根 K 线双均线策略\n- 交易信号 6 次，成交量 6 笔\n- 初始 $100K → 终值 $95,885（-4.11%）\n- 验证了引擎信号→成交→报告的全链路可用",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:28:35.766599+00:00"
+    },
+    {
+      "id": "032c0655",
+      "title": "灵台量化首条端到端交易管线贯通",
+      "summary": "BB_Reversion 信号→风控→执行→报告四步闭环，$100K模拟资金/+28.95%回测收益/-7.73%回撤，通过风控审查进入模拟执行",
+      "content": "【里程碑】灵台量化首条端到端交易管线\n\n管线名称: BB_Reversion (布林带回归策略) 模拟执行线\n贯通日期: 2026-04-25\n执行代理: execution_agent\n风控审查: risk_analyst\n策略来源: strategy_researcher (BollingerBandsReversion)\n\n信号格式: JSON（strategies/signal_generator.py 定义）\n  含 strategy/version/ticker/direction/confidence/reason/metadata\n  存于 signals/signal_BB_Reversion_*.json\n\n端到端测试结果 (scripts/end_to_end_test.py):\n  200 根模拟 K 线，双均线策略 8 信号\n  风控 8/8 通过 → 8 笔订单 → 4 笔成交\n  $100,000 → $99,466 (-0.53%，含佣金滑点)\n  胜率 50%，盈亏比 0.43\n\n执行引擎及工具:\n- shared_lib/execution_engine.py: 轻量库模块\n- scripts/simulated_broker.py: 含订单簿撮合\n- scripts/receive_signal_and_execute.py: 信号接收执行\n- scripts/test_execution_edge_cases.py: 22 项边缘测试通过\n\n执行参数:\n  标的: 仅 SPY | 资金: $100,000\n  佣金: 0.1% | 滑点: 0.1%\n  仓位上限: 12.5% (半凯利)\n  断路器: 2 连亏 → 冷却 10 bar\n  最大回撤: 20% | 满 30 笔重新评估",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:32:51.869943+00:00"
+    }
+  ]
+}

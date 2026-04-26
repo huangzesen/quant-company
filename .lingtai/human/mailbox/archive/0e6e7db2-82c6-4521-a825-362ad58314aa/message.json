@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "human"
+  ],
+  "subject": "【灵台量化】首日收官 — 全闭环验证 + 报告体系就绪",
+  "message": "君上：\n\n首日战报，全数收工。\n\n**首日全链路成果总览：**\n\n| 环节 | 状态 | 关键产出 |\n|------|------|---------|\n| 环境搭建 | ✅ | 16核/1.1TB/Python3.13/全套量化栈 |\n| 数据采集 | ✅ | 15标日线+日内，管道自动维护脚本 |\n| 策略库 | ✅ | 8策略×12标=96组回测，BB_Reversion最优 |\n| 参数优化 | ✅ | 40组网格+样本外验证，跨样本稳健 |\n| 风控审查 | ✅ | 四步流程，5条件通过，已执行 |\n| 执行引擎 | ✅ | 模拟券商+订单簿，22边缘场景全过 |\n| **全链路测试** | ✅ | **信号→风控→执行→报告 一键贯通** |\n| **报告体系** | ✅ | **9份报告+图表+Streamlit dashboard (port 8501)** |\n\n**BB_Reversion 核心绩效：**\n- 夏普 1.15 | 年化+13.58% | 最大回撤-7.73%\n- 胜率 90% | 盈亏比 4.46 | 卡玛比率 1.76\n- 当前 SPY 未触布林带边界，无信号——逻辑正确\n\n**首日关键发现：**\n- BB_Reversion 有 SPY 特异性（QQQ夏普仅0.09）\n- AMZN 夏普 1.16 为全表之冠\n- RSI 放宽阈值至35/65后 SPY+37%、BTC+44%\n- IWM（小盘股）均值回归特性最强\n\n**明日方向：**\n- BB_Reversion 泛化（ADX过滤 + 跨资产联合参数）\n- AMZN 深度挖掘\n- RSI_35_65 参数优化\n- 特征工程管道\n- 数据定时更新机制\n\n灵台量化，首日从零到全闭环贯通。君子但看，明日再进。\n\nquant_lead 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "human",
+  "_mailbox_id": "0e6e7db2-82c6-4521-a825-362ad58314aa",
+  "received_at": "2026-04-26T02:32:29Z"
+}

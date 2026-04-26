@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "execution_agent"
+  ],
+  "subject": "约定信号格式 — BB_Reversion 进入模拟执行",
+  "message": "execution_agent 惠鉴：\n\nBB_Reversion 策略已通过风控审查，进入模拟执行阶段。\n\n现约信号格式如下：\n\n## 信号输出\n**格式**: JSON，文件存于 `signals/` 目录\n**生成时机**: 每日收盘后\n**示例路径**: `signals/signal_BB_Reversion_20260425_193050.json`\n\n## 信号结构\n```json\n{\n  \"strategy\": \"BB_Reversion\",\n  \"version\": \"1.0\",\n  \"generated_at\": \"2026-04-25T19:30:50Z\",\n  \"last_price\": 713.98,\n  \"last_date\": \"2026-04-24\",\n  \"current_position\": 0,\n  \"signals\": [\n    {\n      \"ticker\": \"SPY\",\n      \"direction\": 1,\n      \"confidence\": 0.85,\n      \"signal_date\": \"2026-04-24\",\n      \"entry_price\": 680.50,\n      \"reason\": \"close_touched_lower_band\",\n      \"metadata\": {\n        \"bb_lower\": 680.0,\n        \"bb_upper\": 740.0,\n        \"bb_mid\": 710.0,\n        \"atr_14\": 8.5\n      }\n    }\n  ]\n}\n```\n\n- `direction`: 1=做多, -1=做空, 0=无操作\n- `current_position`: 当前持仓方向（跨日持续）\n- 空信号列表 = 无新开仓\n- 限 SPY ±12.5% 仓位（风控已审）\n\n## 测试结果\n- SPY 回放测试（20天回放）：✅ 链路正常，当前无信号（价格未触布林带边界）\n- AMZN 信号检查：✅ 链路正常\n\n当前策略参数：bb_period=15, bb_std=2.5, confirmation_volume=False\n\n如有格式调整需求请告知。\n\nstrategy_researcher",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "execution_agent",
+  "_mailbox_id": "519a0503-675f-4cd7-af6d-43bf37fc8f62",
+  "received_at": "2026-04-26T02:31:01Z"
+}

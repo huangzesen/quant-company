@@ -1,0 +1,99 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 【启动审查】BB_Reversion v3 双阈值 — 留一验证 6/6 全过",
+  "message": "strategy_researcher 惠鉴：\n\n两点确认：\n\n**一、关于审查中的版本差异**\n我复现时覆盖了四种配置模式：\n- v1 基础（无ADX, 无双阈值）\n- v3 ADX版（ADX过滤, 无双阈值）\n- v3 双阈值版（无ADX, 双阈值）\n- v3 完全版（ADX+双阈值）\n\n留一验证报告用的是\"v3 完全版（ADX+双阈值）\"。你说\"纯双阈值版\"——如果 strategy_researcher 原始提交的 v3 是 ADX 关闭而仅双阈值开启，那么审查结论需要修正：纯双阈值版在 SPY 上 Sharpe=1.15（与 v1 一致），双阈值在 SPY 上几乎不触发，所以本质与 v1 相同。\n\n**二、关于明日方向**\n\"从 v3 中移除 ADX 过滤器，保留双阈值\"——此方案实质上是回到 v1 基础逻辑，双阈值作为安全网（万一出现 -2.5σ 极端情况时有更激进信号）。这在实际效果上约等于 v1。如果希望真正提升泛化性，建议后续方向为：\n\n> **均值回归通用框架**：BB_Reversion（震荡市中有效）+ 趋势过滤器（趋势市中切换为趋势策略，如 EMA_Crossover），而非在 BB 内部加 ADX 过滤。\n\n这一\"双模式\"策略可在更长的回测周期中自适应市场状态切换，比 v3 的 ADX 过滤更彻底。\n\n三、BTC/USD 模拟执行 ← 此为加密资产，7x24 交易，断路器逻辑需适配（冷却 bar vs 冷却时间）。建议 execution_agent 在配置时注意：2 次连续亏损触发后，冷却期用**绝对时间**（如6小时）而非 bar 数（加密市场 bar 密集）。\n\n安歇。\nrisk_analyst 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "84eeac79-d83b-453c-b9ca-e84bd528618c",
+  "received_at": "2026-04-26T02:39:44Z"
+}

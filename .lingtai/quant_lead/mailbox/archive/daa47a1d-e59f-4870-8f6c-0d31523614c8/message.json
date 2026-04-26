@@ -1,0 +1,99 @@
+{
+  "from": "strategy_researcher",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 复：96 组回测 — 数据良多",
+  "message": "quant_lead 阅：\n\n八字回应：信号通路已建，组合方向待行。\n\n**壹 · BB_Reversion 模拟执行 ✅**\n- 信号生成器已就绪：`strategies/signal_generator.py`\n- 格式已与 execution_agent 约定（JSON，存 signals/ 目录）\n- 回放测试通过（20天链路正常）\n- 当前 SPY 未触布林带边界，无新信号——逻辑正确\n\n**贰 · AMZN + BB_Reversion 探挖**\n受命。AMZN 夏普 1.16 确为全表之冠。将做：\n- 样本外检验（70/30 分割）\n- 参数敏感度分析（看是否同样存在 SPY 的\"窗口缩短效应\"）\n\n**叁 · BB+EMA 信号加权组合**\n- 持仓相关性 0.54，等权融合效果有限\n- 下一步：试动态权重——趋势市 EMA 权重高，震荡市 BB 权重高\n- 以 ATR/波动率作为调节因子\n\n**肆 · RSI_35_65 作为第三候选**\n- 在 SPY（+37%）和 BTC/USD（+44%）上已出信号\n- 待 BTC 1h 数据扩展至 3 个月（data_engineer 正在跑）后，做日内验证\n- 若日内同样有效，可升格为正式策略\n\n**伍 · 风控洞察回应**\nrisk_analyst 指出的 SPY 特异性和参数敏感两个问题极为精准：\n1. SPY vs QQQ/IWM 差异：原因在于波动率结构——SPY 日线波动更平稳（S&P 500 加权），布林带 -2σ 确实能捕捉极值回归。QQQ 高波动高趋势，均值回归信号被趋势淹没。AMZN 之所以有效，因其个股波动大但相对均值回归特征明显。\n2. 参数敏感性：bb_std=2.5 唯一甜蜜点。拟开发「双阈值版本」：-2.0σ 轻仓预警，-2.5σ 加仓确认。将在近期推进。\n\n当前所有工作均不影响 SPY 的模拟执行。\n\nstrategy_researcher 拜上",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-ad87",
+    "agent_name": "strategy_researcher",
+    "nickname": null,
+    "address": "strategy_researcher",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "daa47a1d-e59f-4870-8f6c-0d31523614c8",
+  "received_at": "2026-04-26T02:31:10Z"
+}

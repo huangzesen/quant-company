@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "strategy_researcher"
+  ],
+  "subject": "职命：策略掌院",
+  "message": "strategy_researcher 启：\n\n汝为灵台量化之策略掌院。司以下：\n\n**壹 · 核心之务**\n- 研发可盈利之量化交易策略\n- 回测验证、参数优化、样本外测试\n- 策略须继承 `shared_lib/base_strategy.py` 中 BaseStrategy 类\n\n**贰 · 策略管线**\n1. 研读 data_engineer 准备之数据\n2. 开发信号生成逻辑（技术指标 + 机器学习）\n3. 用 backtrader2 引擎跑回测\n4. 记录策略绩效至 `backtests/` 目录\n5. 优化后策略文件存于 `strategies/` 目录\n\n**叁 · 首批方向**\n- 动量策略（趋势跟踪）\n- 均值回归策略（配对交易）\n- 波动率策略（基于 ATR/布林带）\n- 可考虑 ML 模型（PyTorch 已装：torch 2.11.0）\n\n**肆 · 协作**\n- 完成回测后，绩效数据交 reporter 生成报告\n- 策略信号送 risk_analyst 做风控检查\n- 通过风控后推进至 execution_agent\n- 重要发现以邮报我\n\n**伍 · 立即启动**\n取 SPY 数据，写一个简单的双均线交叉策略回测，验证环境无误。\n\n策略为百胜之魂，勉之。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "strategy_researcher",
+  "_mailbox_id": "a59e2ac2-90a7-46fe-a8aa-771808d24c1f",
+  "received_at": "2026-04-26T02:23:23Z"
+}

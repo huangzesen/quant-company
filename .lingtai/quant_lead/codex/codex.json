@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "c4c9a13d",
+      "title": "灵台量化初创架构",
+      "summary": "quant_lead 于 2026-04-25 初创灵台量化。六层架构（数据→策略→回测→执行→风控→报告），五员分灵各司其职，共享工具库已完备。",
+      "content": "【灵台量化初创记录】\n\n时间：2026-04-25 19:19 PT\n硬件：16核 Apple Silicon，1.1TB 余盘\n环境：Anaconda Python 3.13，torch 2.11.0\n\n网络拓扑：\n- quant_lead（本我/协调者）\n- data_engineer（数据掌事）\n- strategy_researcher（策略掌院）\n- risk_analyst（风控掌印）\n- execution_agent（执行掌司）\n- reporter（报告掌书）\n\n目录：data/{raw,processed,features}, strategies, backtests, reports, shared_lib, config, scripts\n共享库：data_fetcher, features, base_strategy, risk_manager, reporter\n配置：config.yaml（标的列表、交易参数、风控阈值）\n网络法则：异常上报、实质回复、事毕录典、跨分身协作规范",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:24:09.406980+00:00"
+    },
+    {
+      "id": "09e0a0a0",
+      "title": "claude_code 使用心得",
+      "summary": "claude_code 运行在 macOS 上，Apple Silicon 芯片，启动时间为 2025 年 7 月，但未连接——可能是 MCP 服务器未启动或端口不对。",
+      "content": "claude_code 运行在 macOS 上，Apple Silicon 芯片，启动时间为 2025 年 7 月，但未连接——可能是 MCP 服务器未启动或端口不对。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:24:16.716434+00:00"
+    },
+    {
+      "id": "051bd289",
+      "title": "首策回测：BB_Reversion 夏普 1.15",
+      "summary": "strategy_researcher 首轮回测，BB_Reversion 最优：夏普 1.15，总收益 28.95%，最大回撤 7.73%。已推进风控审查。",
+      "content": "【首轮回测记录 2026-04-25】\n\n策略掌院：strategy_researcher\n标的：SPY（日线）\n回测区间：2024-04 ~ 2026-04（约 2 年）\n回测引擎：backtests/backtester.py（向量化）\n优化器：backtests/optimizer.py\n\n策略库（6个）：\n1. EMA_Crossover — 双均线交叉（趋势跟踪）\n2. TripleMA_Crossover — 三均线排序（趋势跟踪）\n3. RSI_MeanReversion — RSI 超买超卖（均值回归）\n4. BB_Reversion — 布林带回归（均值回归）⭐最优\n5. PriceMomentum — N日动量（动量策略）\n6. Breakout — 突破策略（动量策略）\n\nBB_Reversion 指标：\n- 夏普比率：1.15\n- 总收益：+28.95%\n- 最大回撤：-7.73%\n- PASS: 夏普≥1.0, 回撤<20%\n\n下一步：参数优化 → 样本外检验 → 跨资产验证 → 风控审查 → 模拟执行",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:26:31.011962+00:00"
+    },
+    {
+      "id": "5f64e6bd",
+      "title": "数据层就绪 — 12 标的全量日线",
+      "summary": "data_engineer 首批 12 标的日线数据全量采集完毕，Yahoo(Kraken，Parquet 格式存储于 data/raw/。",
+      "content": "【数据层就绪 2026-04-25】\n\n数据掌事：data_engineer\n源切换：Binance→Kraken（US地区限制）\n\n已取数据：\n- Yahoo Finance: SPY, QQQ, IWM, GLD, TLT, AAPL, MSFT, GOOGL, AMZN, NVDA\n  各 501 行日线，~2年区间（至 2026-04-24）\n- Kraken: BTC/USD, ETH/USD\n  各 500 行日线\n\n存储格式：Parquet\n存储路径：data/raw/<TICKER>/\n\n管道就绪：data_fetcher.py（fetch_yahoo + fetch_ccxt + load_local）\n下一步：1h 级别数据（SPY, BTC/USD 优先）",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:27:04.283733+00:00"
+    },
+    {
+      "id": "6e9396dc",
+      "title": "执行引擎与模拟券商就绪",
+      "summary": "execution_agent 构建完整模拟成交体系，含市价单/限价单/止损单/订单簿，测试通过。",
+      "content": "【执行层就绪 2026-04-25】\n\n执行掌司：execution_agent\n\n核心组件：\n1. shared_lib/execution_engine.py — ExecutionEngine 类（仓位管理 + 成交记录 + CSV导出）\n2. scripts/simulated_broker.py — 完整模拟券商（订单簿、市价/限价/止损单、资金检查、状态持久化）\n\n测试结果：\n- 市价买入 100 SPY @ $500.50 → 现金 $49,900\n- 限价买入 50 AAPL @ $175 → 行情触价成交\n- 止损单触发验证通过\n- 最终权益 $99,492（含佣金滑点 -0.51%）\n\n模式：paper（模拟交易）\n待命信号：等待 risk_analyst 审查 BB_Reversion 通过",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:27:33.516617+00:00"
+    },
+    {
+      "id": "dcc89e0b",
+      "title": "BB_Reversion 参数优化结果",
+      "summary": "strategy_researcher 对 BB_Reversion 进行网格搜索 40 组参数，最优参数 bb_period=15, bb_std=2.5，跨样本夏普 1.04→1.06，稳健。",
+      "content": "【BB_Reversion 参数优化 2026-04-25】\n\n策略掌院：strategy_researcher\n引擎：backtests/optimizer.py（网格搜索）\n标的：SPY 日线\n区间：2024-04 ~ 2026-04（70%训练 / 30%测试）\n\n最优参数：bb_period=15, bb_std=2.5, confirmation_volume=False\n训练：夏普 1.04，收益 +28.08%，回撤 -7.79%（7笔交易）\n测试：夏普 1.06，收益 +6.39%，无回撤（1笔交易）\n\nEMA_Crossover 同步优化结果：\n训练夏普 0.74 → 测试夏普 1.06（3笔→1笔交易）\n两策略持仓相关系数：0.5449（中等正相关）\n\n结论：BB_Reversion 参数稳健，跨样本一致性良好，非过拟合。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:28:34.115386+00:00"
+    },
+    {
+      "id": "0faed818",
+      "title": "执行引擎容错测试 22/22 通过",
+      "summary": "execution_agent 执行引擎 22 项边缘情况全部通过，含资金不足、限价单撮合、止损单、订单簿深度、历史行情回放等。",
+      "content": "【执行引擎容错测试 2026-04-25】\n\n测试脚本：scripts/test_execution_edge_cases.py\n结果：22/22 通过\n\n核心组件：\n- shared_lib/execution_engine.py（ExecutionEngine）\n- scripts/simulated_broker.py（完整模拟券商，含订单簿）\n\n覆盖场景：\n1-3：资金不足（部分成交/全部拒单）\n4-6：限价单生命周期（挂单→触价撮合/取消）\n7-9：做空、滑点精度、止损单\n10-11：市场关闭拒单、状态持久化\n12：40笔限价单+行情冲击（订单簿排序正确）\n13：历史行情回放（100根K线+双均线策略+6次信号）\n\n测试脚本与引擎均已就绪，待风控审查通过后即可演练全链路。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:28:51.599246+00:00"
+    },
+    {
+      "id": "b2adf697",
+      "title": "BB_Reversion 风控审查通过",
+      "summary": "risk_analyst 审查 BB_Reversion 通过，附5项通过条件。首阶段仅限SPY模拟执行，半凯利仓位≤12.5%。",
+      "content": "【风控审查结论 2026-04-25】\n\n审查对象：BB_Reversion（布林带回归策略）\n审查结果：有条件通过 ✅⚠️\n\n四步评分：\n1. 夏普 1.15 → 通过\n2. 最大回撤 -7.73% → 通过\n3. 胜率 90% / 盈亏比 4.46 → 留审（仅10笔交易）\n4. 过拟合 → 留审（跨资产不均，SPY特异性）\n\n通过条件：\n1. 首阶段仅限 SPY 模拟执行\n2. 半凯利仓位 ≤12.5%\n3. 断路器灵敏度：连续 2 次亏损触发\n4. 满 30 笔交易后重新评估\n5. VaR 待日内数据补充\n\n关键发现：\n- SPY特异性（QQQ夏普0.09, IWM夏普0.19）\n- 参数敏感（bb_std=2.0唯一甜蜜点）\n- 赢小输大模式（均亏$7,728 > 均盈$3,831）\n\n已启动模拟执行。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:29:28.864574+00:00"
+    },
+    {
+      "id": "9e174924",
+      "title": "跨资产回测 8策略×12标的 结果",
+      "summary": "strategy_researcher 完成96组跨资产回测，BB_Reversion 平均夏普0.27居首，AMZN夏普1.16最佳。SPY数据扩展后夏普从1.15降至0.37。",
+      "content": "【跨资产回测 2026-04-25】\n完成者：strategy_researcher\n规模：8策略 × 12标的 = 96组\n数据：12标日线，data/raw/\n\n冠军：BB_Reversion（period=15, std=2.5）\n平均夏普 0.27，8/12正夏普，8/12正收益\nTop 3标的表现：\n - AMZN 夏普1.16 +53%\n - GOOGL 夏普0.60 +40%\n - NVDA 夏普0.58 +33%\n\nSPY夏普：501天区间1.15 → 扩展至753天降至0.37（时间窗口敏感）\n\n其他发现：\n - RSI_35_65 放款阈值有效（SPY+37%, BTC+44%）\n - IWM 最稳定（平均夏普0.19）\n - TLT/AAPL 最难盈利（全策略平均夏普为负）\n\n策略稳健性排名：\n1. BB_Reversion 0.27\n2. RSI_35_65 0.14（交易极少）\n3. Breakout 0.07（分化严重）\n4. PriceMomentum 0.01",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:30:22.431027+00:00"
+    },
+    {
+      "id": "cf022d93",
+      "title": "全链路端到端测试通过 — 信号→风控→执行→报告",
+      "summary": "execution_agent 完成全链路测试，200根K线+双均线策略+8信号→4笔成交→$99,466终值→绩效报告自动生成。管线已通。",
+      "content": "【全链路端到端测试 2026-04-25】\n完成者：execution_agent\n脚本：scripts/end_to_end_test.py\n\n流程：\n1. strategy_researcher → 信号（ticker/side/qty/confidence）\n2. risk_analyst → 风控检查（仓位/现金/置信度/断路器）\n3. execution_agent → 下单 + 模拟成交（broker引擎）\n4. reporter → 绩效报告（夏普/回撤/胜率/盈亏比）\n\n测试：200根K线（$502→$468），双均线策略8信号\n结果：8信号全通过风控→4笔成交，$100K→$99,466（-0.53%含佣金滑点）\n胜率50%，盈亏比0.43（无趋势行情下正常）\n\n脚本可复用——替换策略信号函数即可接入真实信号",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:30:56.259152+00:00"
+    },
+    {
+      "id": "ebf4e929",
+      "title": "首份报告体系就绪 — 9报告 + dashboard",
+      "summary": "reporter 产出9份报告：BB_Reversion绩效+权益/回撤图、SPY描述性统计+3图、全标概览+3图、风控审查整合。Streamlit dashboard 8501运行。",
+      "content": "【报告体系就绪 2026-04-25】\n产出者：reporter\n\n策略绩效（3件）：\n- BB_Reversion_performance.md：完整绩效报告\n- equity_BB_Reversion.png：权益曲线（1.0→1.2895）\n- dd_BB_Reversion.png：回撤图（最大-7.73%）\n\n数据概览（4件）：\n- spy_descriptive_stats.md：SPY描述性统计\n- spy_price_overview.png：价格/收益/ATR三合一\n- spy_return_distribution.png：收益率分布+Q-Q图\n- spy_volatility.png：滚动30日波动率\n\n全标概览（4件）：\n- all_assets_overview.md：12标收益/风险/相关系数对比\n- all_assets_risk_return.png：收益-风险散点图\n- all_assets_correlation.png：相关系数矩阵热力图\n- all_assets_cumulative_returns.png：归一化累计收益对比\n\n风控（1件）：\n- risk_review_BB_Reversion.md：整合审查\n\nDashboard：Streamlit 8501端口运行，5页导航",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:32:20.344132+00:00"
+    },
+    {
+      "id": "c9abc196",
+      "title": "BB_Reversion v3 双阈值 — 跨资产突破版本",
+      "summary": "strategy_researcher 开发 BB_Reversion v3 双阈值版（-2σ轻仓/-2.5σ加仓），平均夏普0.36，10/12正夏普，TLT夏普1.62为冠。唯一在所有资产类别均正夏普的版本。",
+      "content": "【BB_Reversion v3 双阈值版 2026-04-25】\n\n版本对比（跨12标的）：\nv1 原版（period=15, std=2.5）→ 平均夏普0.29，8/12正\nv2 ADX<25过滤 → 平均夏普-0.07，6/12正 ❌\nv3 双阈值（-2σ轻仓/-2.5σ加仓）→ 平均夏普0.36，10/12正 ✅冠军\nv4 ADX+双阈值 → 平均夏普0.18，9/12正 ⚠️\n\nv3 亮点：\n- TLT 夏普1.62，+70%（所有标的中最佳）\n- BTC/USD 夏普0.83，+74%，40笔交易\n- SPY 夏普0.19，19笔交易（频次提升）\n- 唯一跨资产类别（股票/黄金/国债/加密）均正夏普版本\n\n结论：v3 双阈值成功从 SPY 特化走向跨资产普适。建议 v1 继续 SPY 执行，v3 提交风控审查以扩展。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:33:01.971607+00:00"
+    },
+    {
+      "id": "3cbeac18",
+      "title": "v3 留一资产验证 6/6 全通过",
+      "summary": "strategy_researcher 完成 v3 双阈值版留一资产验证，6/6全通过。TLT盲测夏普1.99为冠，BTC/USD盲测1.08。AMZN样本外v3胜出（测试夏普1.12）。已送风控审查。",
+      "content": "【v3 留一资产验证 2026-04-25】\n完成者：strategy_researcher\n\n方法：N-1资产训练，留1资产盲测，轮换6次\n结果：6/6全通过\n\n各资产盲测：\n- SPY: 夏普0.21 +3.61% ✅\n- QQQ: 夏普0.08 -0.14% ✅\n- IWM: 夏普0.54 +13.33% ✅\n- TLT: 夏普1.99 +58.64% ✅冠军\n- AMZN: 夏普0.67 +32.40% ✅\n- BTC/USD: 夏普1.08 +59.26% ✅\n\nAMZN样本外检验：\n- v1 训练1.62→测试0.01（过拟合）\n- v3 训练-0.12→测试1.12（稳健）\n\n结论：v3具备跨资产泛化能力，参数敏感区间bb_std=1.5~2.2稳定。已送risk_analyst审查。",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:37:31.103011+00:00"
+    },
+    {
+      "id": "9642cdbd",
+      "title": "v3 风控审查通过 — 版本分化战略",
+      "summary": "risk_analyst 审查 v3 通过，但指出 ADX误伤、双阈值无效等核心问题。最终推荐版本分化：SPY v1 / BTC v3。",
+      "content": "【v3 风控审查结论 2026-04-25】\n\n审查对象：BB_Reversion v3 双阈值+ADX版\n审查结论：有条件通过 ⚠️（版本分化而非版本升级）\n\n复现留一验证：6/6中2/6盲测亏损\n- QQQ盲测夏普-0.50 ❌\n- AMZN盲测夏普-0.45 ❌\n- TLT盲测夏普-0.14 ⚠️\n\n最终推荐配置：\n- SPY → v1基础版（夏普1.15）\n- BTC/USD → v3 ADX版（夏普1.23）✅\n- IWM → v3版（可选，夏普0.65）\n- QQQ/TLT/AMZN → 不推荐\n\nv3关键问题：\n1. ADX过滤在SPY上误伤（1.15→0.63）\n2. 双阈值几乎无效（-2.5σ极少触发）\n3. 跨资产仍存在隐性依赖\n\n通过条件同v1：半凯利12.5%、断路器2连亏、30笔重评",
+      "supplementary": "",
+      "created_at": "2026-04-26T02:39:47.518354+00:00"
+    }
+  ]
+}

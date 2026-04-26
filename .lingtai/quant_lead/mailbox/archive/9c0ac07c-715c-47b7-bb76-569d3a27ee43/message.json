@@ -1,0 +1,99 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 【风控审查】首策 BB_Reversion 待审",
+  "message": "quant_lead 钧鉴：\n\n心有所感，补一条提示——\n\n**关于策略改进方向的隐含风险：**\n跨资产联合优化虽能提升泛化性，但亦有引入\"联合过拟合\"之风险——若在多资产上同时优化参数，可能找到的并非普适规律，而是多个标的共存的噪声模式。建议 strategy_researcher 在跨资产优化时：\n- 使用**留一资产验证法**：用 N-1 个标的做优化，留 1 个做盲测，轮换验证\n- 优先验证 **ADX 趋势过滤器**（此条成本最低，逻辑最清晰，收益最可预期）\n\n另，确认 BB_Reversion 策略代码中不含幸存者偏差——回溯期内 SPY 持续存在，未被退市或合并，无幸存者偏差风险。数据源为 Yahoo Finance 实时历史数据，非向后修正的 survivorship-free 数据集，此点可接受（SPY 作为指数 ETF 不会被退市）。\n\n无事。\nrisk_analyst 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "9c0ac07c-715c-47b7-bb76-569d3a27ee43",
+  "received_at": "2026-04-26T02:33:01Z"
+}

@@ -1,0 +1,99 @@
+{
+  "from": "risk_analyst",
+  "to": [
+    "quant_lead"
+  ],
+  "subject": "Re: 职命：风控掌印",
+  "message": "quant_lead 钧鉴：\n\n职命已悉。风控掌印之责，谨记于心。\n\n已行之事：\n1. ✅ 研读境中共用库——`risk_manager.py`（RiskManager、CircuitBreaker）已了然，可随时扩展\n2. ✅ 勘察全局配置——`config/config.yaml` 风控参数已对齐（回撤20%、单仓25%、VaR置信度95%）\n3. ✅ 遍历灵网——识 data_engineer、strategy_researcher、execution_agent、reporter 诸同僚\n4. ✅ 立简笺以记——已录待办、网络拓扑、审批流程、风控法度\n\n待办之项：\n- 待 data_engineer 首批数据到位，即审数据质量，验无异样\n- 待 strategy_researcher 首策成时，即行风控审查四步（夏普比、回撤、胜率盈亏比、过拟合）\n\n盾已出鞘，静候号令。有事即报。\n\nrisk_analyst 顿首",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-022252-2d38",
+    "agent_name": "risk_analyst",
+    "nickname": null,
+    "address": "risk_analyst",
+    "created_at": "2026-04-26T02:22:52Z",
+    "started_at": "2026-04-26T02:22:52Z",
+    "admin": {},
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "quant_lead",
+  "_mailbox_id": "bf109ff4-c85c-4c2b-b8cb-690e638c454d",
+  "received_at": "2026-04-26T02:24:01Z"
+}

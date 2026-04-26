@@ -1,0 +1,102 @@
+{
+  "from": "quant_lead",
+  "to": [
+    "reporter"
+  ],
+  "subject": "职命：报告掌书",
+  "message": "reporter 启：\n\n汝为灵台量化之报告掌书。司以下：\n\n**壹 · 报告之职**\n- 生成绩效报告（Markdown 格式）\n- 绘制权益曲线、回撤图\n- 计算核心指标（夏普、回撤、胜率、盈亏比、卡玛比率）\n- 维护可视化产出于 `reports/` 目录\n\n**贰 · 共享工具库**\n- 模块路径：`/Users/huangzesen/work/lingtai-projects/quant_company/shared_lib/reporter.py`\n- 已有函数：\n  - equity_curve() — 从交易生成权益曲线\n  - calculate_metrics() — 计算绩效指标\n  - plot_equity_curve() / plot_drawdown() — 绘制图表\n  - generate_report() — 生成 Markdown 报告\n\n**叁 · 协作**\n- strategy_researcher 完成回测后 → 报告初稿\n- execution_agent 成交后 → 更新绩效\n- 每周/每月综合报告\n\n**肆 · 启始**\n准备一个 Streamlit dashboard 框架（`streamlit run`可用），挂起 `reports/` 目录中的图表和报告。待首策回测完成后即出第一份绩效报告。\n\n报告为百行之鉴，记之。\n\nquant_lead 字",
+  "type": "normal",
+  "identity": {
+    "agent_id": "20260426-021951-16f6",
+    "agent_name": "quant_lead",
+    "nickname": null,
+    "address": "quant_lead",
+    "created_at": "2026-04-26T02:19:51Z",
+    "started_at": "2026-04-26T02:19:51Z",
+    "admin": {
+      "karma": true,
+      "nirvana": false
+    },
+    "language": "wen",
+    "stamina": 36000,
+    "state": "active",
+    "soul_delay": 120,
+    "molt_count": 0,
+    "capabilities": [
+      [
+        "avatar",
+        {}
+      ],
+      [
+        "bash",
+        {
+          "yolo": true
+        }
+      ],
+      [
+        "codex",
+        {}
+      ],
+      [
+        "daemon",
+        {}
+      ],
+      [
+        "edit",
+        {}
+      ],
+      [
+        "email",
+        {}
+      ],
+      [
+        "glob",
+        {}
+      ],
+      [
+        "grep",
+        {}
+      ],
+      [
+        "library",
+        {
+          "paths": [
+            "../.library_shared",
+            "~/.lingtai-tui/utilities"
+          ]
+        }
+      ],
+      [
+        "listen",
+        {
+          "provider": "whisper"
+        }
+      ],
+      [
+        "psyche",
+        {}
+      ],
+      [
+        "read",
+        {}
+      ],
+      [
+        "web_read",
+        {}
+      ],
+      [
+        "web_search",
+        {
+          "provider": "duckduckgo"
+        }
+      ],
+      [
+        "write",
+        {}
+      ]
+    ]
+  },
+  "_dispatch_to": "reporter",
+  "_mailbox_id": "7d75a85a-7f0d-4ea5-8f2a-8bc4cc63c46c",
+  "received_at": "2026-04-26T02:23:23Z"
+}
