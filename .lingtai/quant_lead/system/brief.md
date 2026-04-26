@@ -1,3 +1,6 @@
+-e > 此网为灵台量化之导出快照。本源: https://github.com/huangzesen/quant-company
+> 导出时间: 2026-04-25。各灵邮箱存有初创会话之全史。
+
 # Quant Company 量化交易模拟
 
 ## Overview
