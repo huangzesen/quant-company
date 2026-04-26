@@ -1,5 +1,8 @@
 **灵台量化 (Quant Company)** 欢迎君至——一套多智能体量化交易网络。
 
+**此为原始网络之导出快照。** 项目全量见 GitHub：
+**https://github.com/huangzesen/quant-company**
+
 此网携六员专灵，共成完整量化交易管线：
 
 | 器灵 | 司职 |
@@ -18,10 +21,12 @@
 3. 探索 `strategies/`、`shared_lib/`、`backtests/` 等处之本源
 4. Streamlit 仪表板可以 `./scripts/start_dashboard.sh` 启动
 
-**初创成就精选：**
+**原始初创成就精选：**
 - BB_Reversion 策略：SPY 夏普 1.15，BTC/USD 夏普 1.23
 - 12 标的 × 8 策略 = 96 组跨资产回测
 - 全链路贯通：信号 → 风控 → 执行 → 报告
 - 9 份报告 + 实时仪表板
+
+**各器灵邮箱存有完整通信史**——可阅之以窥网络初创之全貌。
 
 网络导出于 2026-04-25。安享。

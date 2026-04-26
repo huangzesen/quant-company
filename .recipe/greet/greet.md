@@ -1,5 +1,8 @@
 Welcome to **灵台量化 (Quant Company)** — a multi-agent quantitative trading network.
 
+**This is an exported snapshot of the original network.** The full project is available at:
+**https://github.com/huangzesen/quant-company**
+
 This network ships with six specialized agents that together form a complete quant trading pipeline:
 
 | Agent | Role |
@@ -18,10 +21,12 @@ This network ships with six specialized agents that together form a complete qua
 3. Explore the codebase under `strategies/`, `shared_lib/`, `backtests/`
 4. The Streamlit dashboard can be launched with `./scripts/start_dashboard.sh`
 
-**Key achievements (first session):**
+**Key achievements from the original session:**
 - BB_Reversion strategy: Sharpe 1.15 on SPY, 1.23 on BTC/USD
 - 96 cross-asset backtests across 12 instruments
 - Full pipeline verified: signal → risk check → execution → report
 - 9 reports + live dashboard
 
-Network exported at 2026-04-25. Enjoy.
+**All agent mailboxes contain the full history** of the original session's coordination — explore them to understand how the network was built.
+
+Network exported on 2026-04-25. Enjoy.
